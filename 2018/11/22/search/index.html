@@ -68,6 +68,7 @@
 
 
 
+  <meta name="keywords" content="Python,">
 
 
 
@@ -77,17 +78,19 @@
 
 
 
-<meta name="description" content="To be a Geek">
+
+<meta name="description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。同时，下一篇就是进阶的Python语法知识点啦~">
+<meta name="keywords" content="Python">
 <meta property="og:type" content="article">
-<meta property="og:title" content="search">
+<meta property="og:title" content="Python基本语法整理">
 <meta property="og:url" content="http://yoursite.com/2018/11/22/search/index.html">
 <meta property="og:site_name" content="AlexGoke World">
-<meta property="og:description" content="To be a Geek">
+<meta property="og:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。同时，下一篇就是进阶的Python语法知识点啦~">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-22T08:54:53.636Z">
+<meta property="og:updated_time" content="2018-12-04T15:20:21.352Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="search">
-<meta name="twitter:description" content="To be a Geek">
+<meta name="twitter:title" content="Python基本语法整理">
+<meta name="twitter:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。同时，下一篇就是进阶的Python语法知识点啦~">
 
 
 
@@ -123,7 +126,7 @@
 
 
 
-  <title>search | AlexGoke World</title>
+  <title>Python基本语法整理 | AlexGoke World</title>
   
 
 
@@ -329,7 +332,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">search</h1>
+          <h1 class="post-title" itemprop="name headline">Python基本语法整理</h1>
         
 
         <div class="post-meta">
@@ -352,6 +355,28 @@
           </span>
 
           
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
 
           
             
@@ -359,7 +384,7 @@
 
           
           
-             <span id="/2018/11/22/search/" class="leancloud_visitors" data-flag-title="search">
+             <span id="/2018/11/22/search/" class="leancloud_visitors" data-flag-title="Python基本语法整理">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -379,6 +404,37 @@
           
 
           
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                   字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                   分钟
+                </span>
+              
+            </div>
+          
 
           
 
@@ -395,7 +451,142 @@
       
 
       
-        
+        <p>用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的<strong>初级知识</strong>总结在这里。同时，下一篇就是进阶的Python语法知识点啦~<br><a id="more"></a></p>
+<p>﻿@<a href="Python初级语法补充">TOC</a></p>
+<h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="Python中Unicode字符串"><a href="#Python中Unicode字符串" class="headerlink" title="Python中Unicode字符串"></a>Python中Unicode字符串</h2><p>如果一个字符串包含很多需要转义的字符，对每一个字符都进行转义会很麻烦。为了避免这种情况，我们可以在字符串前面加个前缀 <code>r</code> ，表示这是一个 raw 字符串，里面的字符就不需要转义了。例如：</p>
+<pre><code>r&apos;\(~_~)/ \(~_~)/&apos;
+</code></pre><p>如果字符串既包含’又包含”怎么办？<br>这个时候，就需要对字符串的某些特殊字符进行“<code>转义</code>”，Python字符串用<code>\</code>进行转义。<br>要表示字符串 Bob said “I’m OK”.<br>由于 ‘ 和 “ 会引起歧义，因此，我们在它前面插入一个\表示这是一个普通字符，不代表字符串的起始，因此，这个字符串又可以表示为</p>
+<pre><code>&apos;Bob said \&quot;I\&apos;m OK\&quot;.&apos;
+</code></pre><h2 id="Python中Unicode字符串-1"><a href="#Python中Unicode字符串-1" class="headerlink" title="Python中Unicode字符串"></a>Python中Unicode字符串</h2><p>Python在后来添加了对Unicode的支持，以Unicode表示的字符串用u’…’表示，比如：</p>
+<pre><code>print u&apos;中文&apos;
+中文
+</code></pre><p>如果中文字符串在Python环境下遇到 UnicodeDecodeError，这是因为 .py文件保存的格式有问题。可以在第一行添加注释</p>
+<pre><code># -*- coding: utf-8 -*-
+</code></pre><p>目的是告诉Python解释器，用UTF-8编码读取源代码。然后用Notepad++ 另存为… 并选择UTF-8格式保存。</p>
+<h2 id="Python中布尔类型"><a href="#Python中布尔类型" class="headerlink" title="Python中布尔类型"></a>Python中布尔类型</h2><p>在Python中，布尔类型还可以与其他数据类型做 and、or和not运算，请看下面的代码：</p>
+<pre><code>a = True
+print a and &apos;a=T&apos; or &apos;a=F&apos;
+</code></pre><p>计算结果不是布尔类型，而是字符串 ‘a=T’，这是为什么呢？<br>因为Python把0、空字符串’’和None看成 ==False==，==其他数值==和==非空字符串==都看成 True，所以：<br>True and ‘a=T’ 计算结果是 ‘a=T’<br>继续计算 ‘a=T’ or ‘a=F’ 计算结果还是 ‘a=T’</p>
+<h2 id="Python之创建tuple"><a href="#Python之创建tuple" class="headerlink" title="Python之创建tuple"></a>Python之创建tuple</h2><p>因为()既可以表示tuple，又可以作为括号表示运算时的优先级，结果 (1) 被Python解释器计算出结果 1，导致我们得到的不是tuple，而是整数 1。<br>正是因为用()定义单元素的tuple有歧义，所以 Python 规定，单元素 tuple 要多加一个逗号“<code>,</code>”，这样就避免了歧义：</p>
+<pre><code>&gt;&gt;&gt; t = (1,)
+&gt;&gt;&gt; print t
+(1,)
+</code></pre><p>Python在打印单元素tuple时，也自动添加了一个“<code>,</code>”，为了更明确地告诉你这是一个tuple。</p>
+<h2 id="Python之“可变”的tuple"><a href="#Python之“可变”的tuple" class="headerlink" title="Python之“可变”的tuple"></a>Python之“可变”的tuple</h2><p>tuple一开始指向的list并没有改成别的list，所以，tuple所谓的“不变”是说，tuple的每个元素，指向永远不变。即指向’a’，就不能改成指向’b’，指向一个list，就不能改成指向其他对象，但指向的这个list本身是可变的！<br>理解了“指向不变”后，要创建一个内容也不变的tuple怎么做？那就必须保证tuple的每一个元素本身也不能变。</p>
+<h2 id="Python之-if-elif-else"><a href="#Python之-if-elif-else" class="headerlink" title="Python之 if-elif-else"></a>Python之 if-elif-else</h2><p>要避免嵌套结构的 if … else …，我们可以用 ==if … 多个elif … else …== 的结构，一次写完所有的规则：</p>
+<pre><code>if age &gt;= 18:
+print &apos;adult&apos;
+elif age &gt;= 6:
+print &apos;teenager&apos;
+elif age &gt;= 3:
+print &apos;kid&apos;
+else:
+print &apos;baby&apos;
+</code></pre><p>==elif== 意思就是 ==else if==。这样一来，我们就写出了结构非常清晰的一系列条件判断。</p>
+<h2 id="Python之什么是dict"><a href="#Python之什么是dict" class="headerlink" title="Python之什么是dict"></a>Python之什么是dict</h2><p><strong>dict的第一个特点是==查找速度快==，无论dict有10个元素还是10万个元素，查找速度都一样。</strong> 而list的查找速度随着元素增加而逐渐下降。<br><strong>dict的第二个特点就是存储的key-value序对是==没有顺序==的！</strong> 这和list不一样： 打印的顺序不一定是我们创建时的顺序，而且，不同的机器打印的顺序都可能不同，这说明dict内部是<strong>无序</strong>的，不能用dict存储有序的集合。<br><strong>dict的第三个特点是作为 key 的元素必须==不可变==</strong>，Python的基本类型如字符串str、整数int、浮点数float 都是不可变的，都可以作为 key。但是list是可变的，就不能作为 key。<br>   不可变这个限制仅作用于key，value是否可变无所谓：</p>
+<pre><code>{
+&apos;123&apos;: [1, 2, 3],     # key 是 str，value是list
+123: &apos;123&apos;,           # key 是 int，value 是 str
+(&apos;a&apos;, &apos;b&apos;): True       # key 是 tuple，并且tuple的每个元素都是不可变对象，value是 boolean
+}
+</code></pre><p>最常用的key还是字符串，因为用起来最方便。</p>
+<h2 id="Python中-什么是set"><a href="#Python中-什么是set" class="headerlink" title="Python中 什么是set"></a>Python中 什么是set</h2><p><strong>dict的作用是建立一组 key 和一组 value 的映射关系，dict的key是不能重复的。</strong><br>有的时候，我们只想要 dict 的 key，不关心 key 对应的 value，目的就是保证这个集合的元素不会重复，这时，set就派上用场了。<br><strong>set 持有一系列元素，这一点和 list 很像，但是set的元素没有重复，而且是无序的，这点和 dict 的 key很像。</strong><br>创建 set 的方式是调用 set() 并传入一个 list，list的元素将作为set的元素：</p>
+<pre><code>&gt;&gt;&gt; s = set([&apos;A&apos;, &apos;B&apos;, &apos;C&apos;])
+</code></pre><p>由于<strong>set存储的是无序集合</strong>，所以我们没法通过索引来访问。<br>访问 set中的某个元素实际上就是判断一个元素是否在set中。<br>例如，存储了班里同学名字的set：</p>
+<pre><code>&gt;&gt;&gt; s = set([&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;])
+</code></pre><p>我们可以用 in 操作符判断：<br>Bart是该班的同学吗？</p>
+<pre><code>&gt;&gt;&gt; &apos;Bart&apos; in s
+True
+</code></pre><p>看来大小写很重要，’Bart’ 和 ‘bart’被认为是两个不同的元素。</p>
+<p><strong>set的内部结构和dict很像，唯一区别是不存储value</strong>，因此，判断一个元素是否在set中速度很快。<br><strong>set存储的元素和dict的key类似，必须是不变对象</strong>，因此，任何可变对象是不能放入set中的。<br>最后，==set存储的元素也是没有顺序的==。</p>
+<h2 id="Python函数之返回多值"><a href="#Python函数之返回多值" class="headerlink" title="Python函数之返回多值"></a>Python函数之返回多值</h2><p>这样我们就可以同时获得返回值：</p>
+<pre><code>&gt;&gt;&gt; x, y = move(100, 100, 60, math.pi / 6)
+&gt;&gt;&gt; print x, y
+151.961524227 70.0
+</code></pre><p>但其实这只是一种假象，Python函数返回的仍然是单一值：</p>
+<pre><code>&gt;&gt;&gt; r = move(100, 100, 60, math.pi / 6)
+&gt;&gt;&gt; print r
+(151.96152422706632, 70.0)
+</code></pre><p>用print打印返回结果，原来返回值是一个<strong>tuple</strong>！<br>但是，在语法上，返回一个tuple可以省略括号，而多个变量可以同时接收一个tuple，按位置赋给对应的值，所以，<strong>Python的函数</strong>返回多值其实就是<strong>返回一个tuple</strong>，但写起来更方便。</p>
+<p>==使用递归函数需要注意防止栈溢出==。在计算机中，函数调用是通过栈（stack）这种数据结构实现的，每当进入一个函数调用，栈就会加一层栈帧，每当函数返回，栈就会减一层栈帧。由于栈的大小不是无限的，所以，递归调用的次数过多，会导致栈溢出。可以试试计算 fact(10000)。</p>
+<h2 id="Python之定义默认参数"><a href="#Python之定义默认参数" class="headerlink" title="Python之定义默认参数"></a>Python之定义默认参数</h2><p>定义函数的时候，还可以有默认参数。<br>例如Python自带的 int() 函数，其实就有两个参数，我们既可以传一个参数，又可以传两个参数：</p>
+<pre><code>&gt;&gt;&gt; int(&apos;123&apos;)
+123
+&gt;&gt;&gt; int(&apos;123&apos;, 8)
+83
+</code></pre><p>int()函数的第二个参数是转换进制，如果不传，默认是十进制 (base=10)，如果传了，就用传入的参数。<br>可见，<strong>函数的默认参数的作用是简化调用</strong>，你只需要把必须的参数传进去。但是在需要的时候，又可以传入额外的参数来覆盖默认参数值。</p>
+<h2 id="Python之定义可变参数"><a href="#Python之定义可变参数" class="headerlink" title="Python之定义可变参数"></a>Python之定义可变参数</h2><p>如果想让一个函数能接受任意个参数，我们就可以定义一个可变参数：</p>
+<pre><code>def fn(*args):
+print args
+</code></pre><p>可变参数的名字前面有个<code>*</code>号，我们可以传入0个、1个或多个参数给可变参数：<br>可变参数也不是很神秘，Python解释器会把传入的一组参数组装成一个tuple传递给可变参数，因此，在函数内部，直接把变量 ==args==看成一个 ==tuple== 就好了。 </p>
+<p>tuple:  <strong>创建tuple和创建list唯一不同之处是用( )替代了[ ]</strong>。<br>现在，这个 <code>t</code> 就不能改变了，tuple没有 append()方法，也没有insert()和pop()方法。<br>所以，新同学没法直接往 tuple 中添加，老同学想退出 tuple 也不行。</p>
+<h2 id="对list进行切片"><a href="#对list进行切片" class="headerlink" title="对list进行切片"></a>对list进行切片</h2><p>对这种经常取指定索引范围的操作，用循环十分繁琐，因此，Python提供了切片（Slice）操作符，能大大简化这种操作。<br>对应上面的问题，取前3个元素，用一行代码就可以完成切片：</p>
+<pre><code>`&gt;&gt;&gt; L[0:3]
+[&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;]`
+</code></pre><p> L[0:3]表示，从索引0开始取，直到索引3为止，但不包括索引3。即索引0，1，2，正好是3个元素。<br>如果第一个索引是0，还可以省略：</p>
+<pre><code>&gt;&gt;&gt; L[:3]
+[&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;]
+</code></pre><p>也可以从索引1开始，取出2个元素出来：</p>
+<pre><code>&gt;&gt;&gt; L[1:3]
+[&apos;Lisa&apos;, &apos;Bart&apos;]
+</code></pre><p>只用一个 : ，表示从头到尾：</p>
+<pre><code>&gt;&gt;&gt; L[:]
+&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]
+</code></pre><p>因此，L[:]实际上复制出了一个新list。<br>切片操作还可以指定第三个参数：</p>
+<pre><code>&gt;&gt;&gt; L[::2]
+[&apos;Adam&apos;, &apos;Bart&apos;]
+</code></pre><p>第三个参数表示每N个取一个，上面的 L[::2] 会每两个元素取出一个来，也就是隔一个取一个。<br>把list换成tuple，切片操作完全相同，只是切片的结果也变成了tuple。</p>
+<h2 id="索引迭代"><a href="#索引迭代" class="headerlink" title="索引迭代"></a>索引迭代</h2><p>Python中，<strong>迭代永远是取出元素本身，而非元素的索引</strong>。<br>对于有序集合，元素确实是有索引的。有的时候，我们确实想在 for 循环中拿到索引，怎么办？              方法是使用 ==enumerate() 函数==：</p>
+<pre><code>&gt;&gt;&gt; L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]
+&gt;&gt;&gt; for index, name in enumerate(L):
+... print index, &apos;-&apos;, name
+...
+0 - Adam
+1 - Lisa
+2 - Bart
+3 - Paul
+</code></pre><p>使用 enumerate() 函数，我们可以在for循环中同时绑定索引index和元素name。但是，这不是 enumerate() 的特殊语法。实际上，enumerate() 函数把：    <strong>[‘Adam’, ‘Lisa’, ‘Bart’, ‘Paul’]</strong><br>变成了类似：    <strong>[(0, ‘Adam’), (1, ‘Lisa’), (2, ‘Bart’), (3, ‘Paul’)]</strong><br>因此，迭代的每一个元素实际上是一个tuple：</p>
+<pre><code>for t in enumerate(L):
+index = t[0]
+name = t[1]
+print index, &apos;-&apos;, name
+</code></pre><p>如果我们知道每个tuple元素都包含两个元素，for循环又可以进一步简写为：</p>
+<pre><code>for index, name in enumerate(L):
+print index, &apos;-&apos;, name
+</code></pre><p>这样不但代码更简单，而且还少了两条赋值语句。        可见，索引迭代也不是真的按索引访问，而是由 enumerate() 函数自动把每个元素变成 (index, element) 这样的tuple，再迭代，就同时获得了索引和元素本身。</p>
+<p><strong>zip()函数可以把两个 list 变成一个 list：</strong></p>
+<pre><code>&gt;&gt;&gt; zip([10, 20, 30], [&apos;A&apos;, &apos;B&apos;, &apos;C&apos;])
+[(10, &apos;A&apos;), (20, &apos;B&apos;), (30, &apos;C&apos;)]
+</code></pre><p>在迭代 [‘Adam’, ‘Lisa’, ‘Bart’, ‘Paul’] 时，如果我们想打印出名次 - 名字（名次从1开始)，请考虑如何在迭代中打印出来。</p>
+<pre><code>L = [&apos;Adam&apos;, &apos;Lisa&apos;, &apos;Bart&apos;, &apos;Paul&apos;]
+for index, name in zip(range(1, len(L)+1), L):
+print index, &apos;-&apos;, name
+</code></pre><h2 id="迭代dict的value"><a href="#迭代dict的value" class="headerlink" title="迭代dict的value"></a>迭代dict的value</h2><p>如果我们希望迭代 dict 对象的value，应该怎么做？<br>dict 对象有一个 <strong>values()</strong> 方法，这个方法把dict转换成一个包含所有value的list，这样，我们迭代的就是 dict的每一个 value：<br>如果仔细阅读Python的文档，还可以发现，dict除了 <strong>values()</strong> 方法外，还有一个 <strong>itervalues()</strong> 方法，用 <strong>itervalues()</strong> 方法替代 <strong>values()</strong> 方法，迭代效果完全一样：<br><strong>那这两个方法有何不同之处呢？</strong></p>
+<ol>
+<li><strong>values()</strong> 方法实际上把一个 dict 转换成了包含 value 的list。</li>
+<li>但是 <strong>itervalues()</strong> 方法不会转换，它会在迭代过程中依次从 dict 中取出 value，所以 itervalues() 方法比 values() 方法节省了生成 list 所需的内存。</li>
+<li>打印 itervalues() 发现它返回一个 <dictionary-valueiterator> 对象，这说明在Python中，<strong>for 循环可作用的迭代对象远不止 list，tuple，str，unicode，dict等</strong>，任何可迭代对象都可以作用于for循环，而内部如何迭代我们通常并不用关心。<br><strong>如果一个对象说自己可迭代，那我们就直接用 for 循环去迭代它，可见，迭代是一种抽象的数据操作，它不对迭代对象内部的数据有任何要求。</strong></dictionary-valueiterator></li>
+</ol>
+<h2 id="迭代dict的key和value"><a href="#迭代dict的key和value" class="headerlink" title="迭代dict的key和value"></a>迭代dict的key和value</h2><p>我们了解了如何<strong>迭代 dict</strong> 的<strong>key</strong>和<strong>value</strong>，那么，在一个 for 循环中，能否同时迭代 key和value？答案是肯定的。<br>首先，我们看看 dict 对象的 <strong>items()</strong> 方法返回的值：</p>
+<pre><code>&gt;&gt;&gt; d = { &apos;Adam&apos;: 95, &apos;Lisa&apos;: 85, &apos;Bart&apos;: 59 }
+&gt;&gt;&gt; print d.items()
+[(&apos;Lisa&apos;, 85), (&apos;Adam&apos;, 95), (&apos;Bart&apos;, 59)]
+</code></pre><p>可以看到，items() 方法把dict对象转换成了包含tuple的list，我们对这个list进行迭代，可以同时获得key和value：<br>和 values() 有一个 itervalues() 类似， <strong>items()</strong> 也有一个对应的 <strong>iteritems()</strong>，iteritems() 不把dict转换成list，而是在迭代过程中不断给出 tuple，所以， iteritems() 不占用额外的内存。</p>
+<h2 id="列表生成式"><a href="#列表生成式" class="headerlink" title="列表生成式"></a>列表生成式</h2><p>如果要生成[1x1, 2x2, 3x3, …, 10x10]怎么做？方法一是循环：</p>
+<pre><code>&gt;&gt;&gt; L = []
+&gt;&gt;&gt; for x in range(1, 11):
+... L.append(x * x)
+</code></pre><p>但是循环太繁琐，而列表生成式则可以用一行语句代替循环生成上面的list：</p>
+<pre><code>&gt;&gt;&gt; [x * x for x in range(1, 11)]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</code></pre><p>这种写法就是Python特有的列表生成式。利用列表生成式，可以以非常简洁的代码生成 list。<br>写列表生成式时，把要生成的元素 x * x 放到前面，后面跟 for 循环，就可以把list创建出来，十分有用，多写几次，很快就可以熟悉这种语法。</p>
+<h2 id="复杂表达式"><a href="#复杂表达式" class="headerlink" title="复杂表达式"></a>复杂表达式</h2><p>完全可以通过一个复杂的列表生成式把它变成一个 HTML 表格：</p>
+<pre><code>tds = [&apos;&lt;tr&gt;&lt;td&gt;%s&lt;/td&gt;&lt;td&gt;%s&lt;/td&gt;&lt;/tr&gt;&apos; % (name, score) for name, score in d.iteritems()]
+</code></pre><p>注：字符串可以通过<code>%</code>进行格式化，用指定的参数替代 <code>%s</code>。字符串的<code>join()</code>方法可以把一个 list 拼接成一个字符串。</p>
+<h2 id="条件过滤"><a href="#条件过滤" class="headerlink" title="条件过滤"></a>条件过滤</h2><p>列表生成式的 <strong>for 循环后面还可以加上 if 判断</strong>。例如：</p>
+<pre><code>&gt;&gt;&gt; [x * x for x in range(1, 11)]
+[1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
+</code></pre>
       
     </div>
     
@@ -444,7 +635,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2018/11/22/search/" title="search">http://yoursite.com/2018/11/22/search/</a>
+    <a href="http://yoursite.com/2018/11/22/search/" title="Python基本语法整理">http://yoursite.com/2018/11/22/search/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -457,27 +648,17 @@
 
     <footer class="post-footer">
       
-
-      
-      
-      
-
-      
-        <div class="post-nav">
-          <div class="post-nav-next post-nav-item">
-            
-              <a href="/2018/11/20/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
-              </a>
-            
-          </div>
-
-          <span class="post-nav-divider"></span>
-
-          <div class="post-nav-prev post-nav-item">
-            
-          </div>
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
         </div>
+      
+
+      
+      
+      
+
       
 
       
@@ -537,8 +718,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -555,14 +745,32 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">1</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
             
 
             
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
 
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
             
 
           </nav>
@@ -667,6 +875,22 @@
       </section>
 
       
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#目录"><span class="nav-number">1.</span> <span class="nav-text">目录</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中Unicode字符串"><span class="nav-number">1.1.</span> <span class="nav-text">Python中Unicode字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中Unicode字符串-1"><span class="nav-number">1.2.</span> <span class="nav-text">Python中Unicode字符串</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中布尔类型"><span class="nav-number">1.3.</span> <span class="nav-text">Python中布尔类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之创建tuple"><span class="nav-number">1.4.</span> <span class="nav-text">Python之创建tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之“可变”的tuple"><span class="nav-number">1.5.</span> <span class="nav-text">Python之“可变”的tuple</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之-if-elif-else"><span class="nav-number">1.6.</span> <span class="nav-text">Python之 if-elif-else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之什么是dict"><span class="nav-number">1.7.</span> <span class="nav-text">Python之什么是dict</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中-什么是set"><span class="nav-number">1.8.</span> <span class="nav-text">Python中 什么是set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python函数之返回多值"><span class="nav-number">1.9.</span> <span class="nav-text">Python函数之返回多值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之定义默认参数"><span class="nav-number">1.10.</span> <span class="nav-text">Python之定义默认参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python之定义可变参数"><span class="nav-number">1.11.</span> <span class="nav-text">Python之定义可变参数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#对list进行切片"><span class="nav-number">1.12.</span> <span class="nav-text">对list进行切片</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#索引迭代"><span class="nav-number">1.13.</span> <span class="nav-text">索引迭代</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代dict的value"><span class="nav-number">1.14.</span> <span class="nav-text">迭代dict的value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#迭代dict的key和value"><span class="nav-number">1.15.</span> <span class="nav-text">迭代dict的key和value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#列表生成式"><span class="nav-number">1.16.</span> <span class="nav-text">列表生成式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#复杂表达式"><span class="nav-number">1.17.</span> <span class="nav-text">复杂表达式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#条件过滤"><span class="nav-number">1.18.</span> <span class="nav-text">条件过滤</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
 
       
 
@@ -686,6 +910,15 @@
   </span>
   <span class="author" itemprop="copyrightHolder">AlexGoke</span>
 
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count"></span>
   
 </div>
 
