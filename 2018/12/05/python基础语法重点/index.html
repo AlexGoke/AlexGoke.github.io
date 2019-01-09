@@ -88,7 +88,7 @@
 <meta property="og:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/05/python基础语法重点/python.jpg">
-<meta property="og:updated_time" content="2018-12-23T07:31:30.170Z">
+<meta property="og:updated_time" content="2019-01-04T01:27:37.996Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础语法重点">
 <meta name="twitter:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。">
@@ -469,7 +469,7 @@
 <h2 id="Python中布尔类型"><a href="#Python中布尔类型" class="headerlink" title="Python中布尔类型"></a>Python中布尔类型</h2><p>在Python中，布尔类型还可以与其他数据类型做 and、or和not运算，请看下面的代码：</p>
 <pre><code>a = True
 print a and &apos;a=T&apos; or &apos;a=F&apos;
-</code></pre><p>计算结果不是布尔类型，而是字符串 ‘a=T’，这是为什么呢？<br>因为Python把0、空字符串’’和None看成 ==False==，==其他数值==和==非空字符串==都看成 True，所以：<br>True and ‘a=T’ 计算结果是 ‘a=T’<br>继续计算 ‘a=T’ or ‘a=F’ 计算结果还是 ‘a=T’</p>
+</code></pre><p>计算结果不是布尔类型，而是字符串 ‘a=T’，这是为什么呢？<br>因为Python把0、空字符串’’和None看成 False，<strong>其他数值</strong>和<strong>非空字符串</strong>都看成 True，所以：<br>True and ‘a=T’ 计算结果是 ‘a=T’<br>继续计算 ‘a=T’ or ‘a=F’ 计算结果还是 ‘a=T’</p>
 <h2 id="Python之创建tuple"><a href="#Python之创建tuple" class="headerlink" title="Python之创建tuple"></a>Python之创建tuple</h2><p>因为()既可以表示tuple，又可以作为括号表示运算时的优先级，结果 (1) 被Python解释器计算出结果 1，导致我们得到的不是tuple，而是整数 1。<br>正是因为用()定义单元素的tuple有歧义，所以 Python 规定，单元素 tuple 要多加一个逗号“<code>,</code>”，这样就避免了歧义：</p>
 <pre><code>&gt;&gt;&gt; t = (1,)
 &gt;&gt;&gt; print t
@@ -521,7 +521,7 @@ True
 <h2 id="Python之定义可变参数"><a href="#Python之定义可变参数" class="headerlink" title="Python之定义可变参数"></a>Python之定义可变参数</h2><p>如果想让一个函数能接受任意个参数，我们就可以定义一个可变参数：</p>
 <pre><code>def fn(*args):
 print args
-</code></pre><p>可变参数的名字前面有个<code>*</code>号，我们可以传入0个、1个或多个参数给可变参数：<br>可变参数也不是很神秘，Python解释器会把传入的一组参数组装成一个tuple传递给可变参数，因此，在函数内部，直接把变量 ==args==看成一个 ==tuple== 就好了。 </p>
+</code></pre><p>可变参数的名字前面有个<code>*</code>号，我们可以传入0个、1个或多个参数给可变参数：<br>可变参数也不是很神秘，Python解释器会把传入的一组参数组装成一个tuple传递给可变参数，因此，在函数内部，直接把变量 <strong>args</strong>看成一个 <strong>tuple</strong> 就好了。 </p>
 <p>tuple:  <strong>创建tuple和创建list唯一不同之处是用( )替代了[ ]</strong>。<br>现在，这个 <code>t</code> 就不能改变了，tuple没有 append()方法，也没有insert()和pop()方法。<br>所以，新同学没法直接往 tuple 中添加，老同学想退出 tuple 也不行。</p>
 <h2 id="对list进行切片"><a href="#对list进行切片" class="headerlink" title="对list进行切片"></a>对list进行切片</h2><p>对这种经常取指定索引范围的操作，用循环十分繁琐，因此，Python提供了切片（Slice）操作符，能大大简化这种操作。<br>对应上面的问题，取前3个元素，用一行代码就可以完成切片：</p>
 <pre><code>`&gt;&gt;&gt; L[0:3]
@@ -766,7 +766,7 @@ print index, &apos;-&apos;, name
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">6</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -777,7 +777,7 @@ print index, &apos;-&apos;, name
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -788,7 +788,7 @@ print index, &apos;-&apos;, name
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index-1.html">
-                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -925,7 +925,7 @@ print index, &apos;-&apos;, name
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
   <span class="with-love">
     <i class="fa fa-user"></i>
   </span>
@@ -939,7 +939,7 @@ print index, &apos;-&apos;, name
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">11.5k</span>
+    <span title="Site words total count">12.2k</span>
   
 </div>
 
