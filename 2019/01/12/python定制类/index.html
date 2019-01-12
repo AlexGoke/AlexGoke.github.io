@@ -1,0 +1,1570 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Python,编程,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="定制类的目的：是为了让我们编写的类能够应用到普通的函数中，比如像len()、compare()函数这些，为了实现这个目的，就需要实现特殊方法，">
+<meta name="keywords" content="Python,编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python定制类">
+<meta property="og:url" content="http://yoursite.com/2019/01/12/python定制类/index.html">
+<meta property="og:site_name" content="AlexGoke World">
+<meta property="og:description" content="定制类的目的：是为了让我们编写的类能够应用到普通的函数中，比如像len()、compare()函数这些，为了实现这个目的，就需要实现特殊方法，">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/2019/01/12/python定制类/bike.jpg">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20181223181946362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-01-12T06:02:25.473Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="python定制类">
+<meta name="twitter:description" content="定制类的目的：是为了让我们编写的类能够应用到普通的函数中，比如像len()、compare()函数这些，为了实现这个目的，就需要实现特殊方法，">
+<meta name="twitter:image" content="http://yoursite.com/2019/01/12/python定制类/bike.jpg">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/01/12/python定制类/">
+
+
+
+
+
+  <title>python定制类 | AlexGoke World</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">AlexGoke World</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">关于技术，关于生活</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-about">
+          <a href="/about/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-user"></i> <br>
+            
+            关于
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-schedule">
+          <a href="/schedule/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-calendar"></i> <br>
+            
+            日程表
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-readaccount">
+          <a href="/readaccout/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-book"></i> <br>
+            
+            阅读统计
+          </a>
+        </li>
+      
+
+      
+        <li class="menu-item menu-item-search">
+          
+            <a href="javascript:;" class="popup-trigger">
+          
+            
+              <i class="menu-item-icon fa fa-search fa-fw"></i> <br>
+            
+            搜索
+          </a>
+        </li>
+      
+    </ul>
+  
+
+  
+    <div class="site-search">
+      
+  <div class="popup search-popup local-search-popup">
+  <div class="local-search-header clearfix">
+    <span class="search-icon">
+      <i class="fa fa-search"></i>
+    </span>
+    <span class="popup-btn-close">
+      <i class="fa fa-times-circle"></i>
+    </span>
+    <div class="local-search-input-wrapper">
+      <input autocomplete="off" placeholder="搜索..." spellcheck="false" type="text" id="local-search-input">
+    </div>
+  </div>
+  <div id="local-search-result"></div>
+</div>
+
+
+
+    </div>
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/01/12/python定制类/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="劉淵">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="AlexGoke World">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">python定制类</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-01-12T13:52:32+08:00">
+                2019-01-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/Python/" itemprop="url" rel="index">
+                    <span itemprop="name">Python</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+             <span id="/2019/01/12/python定制类/" class="leancloud_visitors" data-flag-title="python定制类">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+            <span class="post-meta-divider">|</span>
+            <span class="page-pv"><i class="fa fa-file-o"></i>
+            <span class="busuanzi-value" id="busuanzi_value_page_pv"></span>
+            </span>
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  2.7k 字
+                </span>
+              
+
+              
+                <span class="post-meta-divider">|</span>
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">阅读时长 &asymp;</span>
+                
+                <span title="阅读时长">
+                  12 分钟
+                </span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><img src="/2019/01/12/python定制类/bike.jpg" alt="图"><br>定制类的目的：是为了让我们编写的类能够应用到普通的函数中，比如像len()、compare()函数这些，为了实现这个目的，就需要实现<strong>特殊方法</strong>，<br><a id="more"></a></p>
+<p>﻿</p>
+<h1 id="定制类"><a href="#定制类" class="headerlink" title="定制类"></a>定制类</h1><h2 id="特殊方法"><a href="#特殊方法" class="headerlink" title="特殊方法"></a>特殊方法</h2><p>比较print的结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;<span class="keyword">print</span> lst</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="keyword">print</span> p    <span class="comment"># p是Person类一个对象</span></span><br><span class="line">&lt; __main__.Person object at  <span class="number">0x10da9e850</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>python是如何把<strong>任意变量</strong>变成<strong>str</strong>的呢？</p>
+<p><strong>因为任何数据类型的实例都有一个特殊方法：<strong> str </strong>()</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;python lst.__str__()</span><br><span class="line">[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line"></span><br><span class="line">&gt;&gt;&gt;<span class="keyword">print</span> p.__str__()    <span class="comment"># p是Person类一个对象</span></span><br><span class="line">&lt; __main__.Person object at  <span class="number">0x10da9e850</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>如果给<strong>Person</strong>类加上 <strong>str()</strong>这个特殊方法，我们就可以按照自己的想法打印出<strong>Person</strong>的这个实例来。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt;p = Person(<span class="string">'Bob'</span>, <span class="string">'male'</span>)</span><br><span class="line">&gt;&gt;&gt;<span class="keyword">print</span> p</span><br><span class="line">&lt;Person: Bob, male&gt;</span><br></pre></td></tr></table></figure>
+<p>python的特殊方法：<br>用于print的 <strong> str() </strong><br>用于len的 <strong> len() </strong><br>用于cmp的 <strong> cmp() </strong>   ……<br><img src="https://img-blog.csdnimg.cn/20181223181946362.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<blockquote>
+<p>python特殊方法的<strong>特点</strong>：</p>
+<ol>
+<li>特殊方法定义在class中</li>
+<li>不需要直接调用</li>
+<li>python的某些函数或者操作符会调用对应的特殊方法</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>如何正确实现特殊方法：</p>
+<ol>
+<li>只需要编写用到的特殊方法</li>
+<li>有关联性的特殊方法都必须实现<br>(要写一个<strong>getattr </strong>，就必须同时实现<strong>setattr() </strong>, <strong>delattr() </strong>)</li>
+</ol>
+</blockquote>
+<h2 id="Python中-str-和-repr"><a href="#Python中-str-和-repr" class="headerlink" title="Python中 str  和 repr "></a>Python中 <strong>str </strong> 和 <strong>repr </strong></h2><p>如果要把一个<strong>类的实例</strong>变成 <strong>str</strong>，就需要实现特殊方法<strong>str</strong>()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'(Person: %s, %s)'</span> % (self.name, self.gender)</span><br></pre></td></tr></table></figure></p>
+<p>现在，在交互式命令行下用 <strong>print</strong> 试试：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>p = Person(<span class="string">'Bob'</span>, <span class="string">'male'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> p</span><br><span class="line">(Person: Bob, male)</span><br></pre></td></tr></table></figure></p>
+<p>如果直接敲变量 p：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>p</span><br><span class="line">&lt;main.Person object at <span class="number">0x10c941890</span>&gt;</span><br></pre></td></tr></table></figure></p>
+<p>似乎<strong>str</strong>() 不会被调用。</p>
+<p>因为 Python 定义了<strong>str</strong>()和<strong>repr</strong>()两种方法，<strong> str</strong>()用于显示给<strong>用户</strong>，而<strong>repr</strong>()用于显示给<strong>开发人员</strong>。</p>
+<p>有一个偷懒的定义<strong>repr</strong>的方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">__repr__ = __str__</span><br></pre></td></tr></table></figure></p>
+<h2 id="Python中-cmp"><a href="#Python中-cmp" class="headerlink" title="Python中 cmp "></a>Python中 <strong>cmp </strong></h2><p>对 <strong>int</strong>、<strong>str</strong> 等内置数据类型排序时，Python的 <strong>sorted()</strong> 按照默认的比较函数 <strong>cmp</strong> 排序，但是，如果对一组 <strong>Student 类的实例</strong>排序时，就必须提供我们自己的特殊方法 <strong>cmp </strong>()：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, score)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.score = score</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'(%s: %s)'</span> % (self.name, self.score)</span><br><span class="line">    __repr__ = __str__</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__cmp__</span><span class="params">(self, s)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.name &lt; s.name:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">-1</span></span><br><span class="line">        <span class="keyword">elif</span> self.name &gt; s.name:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">1</span></span><br><span class="line">        <span class="keyword">else</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="number">0</span></span><br></pre></td></tr></table></figure></p>
+<p>上述 Student 类实现了<strong>cmp</strong>()方法，<strong>cmp</strong>用<strong>实例自身self</strong>和<strong>传入的实例 s</strong> 进行比较，如果 self 应该排在前面，就返回 -1，如果 s 应该排在前面，就返回1，如果两者相当，返回 0。</p>
+<p>Student类实现了按name进行排序：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>L = [Student(<span class="string">'Tim'</span>, <span class="number">99</span>), Student(<span class="string">'Bob'</span>, <span class="number">88</span>), Student(<span class="string">'Alice'</span>, <span class="number">77</span>)]</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> sorted(L)</span><br><span class="line">[(Alice: <span class="number">77</span>), (Bob: <span class="number">88</span>), (Tim: <span class="number">99</span>)]</span><br></pre></td></tr></table></figure></p>
+<p>注意: 如果list不仅仅包含 Student 类，则 <strong>cmp </strong> 可能会报错：</p>
+<h2 id="Python中len"><a href="#Python中len" class="headerlink" title="Python中len"></a>Python中<strong>len</strong></h2><p>如果一个类表现得像一个list，要获取有多少个元素，就得用 <strong>len()</strong> 函数。<br>要让 <strong>len()</strong> 函数工作正常，类必须提供一个特殊方法<strong>len</strong>()，它返回元素的个数。<br>例如，我们写一个 Students 类，把名字传进去：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Students</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, *args)</span>:</span></span><br><span class="line">        self.names = args</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__len__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> len(self.names)</span><br></pre></td></tr></table></figure></p>
+<p>只要正确实现了<strong>len</strong>()方法，就可以用<strong>len()</strong> 函数返回<strong>Students实例</strong>的“长度”：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>ss = Students(<span class="string">'Bob'</span>, <span class="string">'Alice'</span>, <span class="string">'Tim'</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span><span class="keyword">print</span> len(ss)</span><br><span class="line"><span class="number">3</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p><strong>知识点回顾： 可变参数</strong>——python基础语法<br>如果想让一个函数接受任意个参数，可以顶一个可变参数。可变参数名字前面有个<em>号，可传入多个参数给可变参数。<br>`def fn(</em>args)<code></code>print args`<br>Python解释器会把传入的一组参数组装成一个tuple传递给可变参数，因此，在函数内部，直接把变量args看成一个tuple就好了。</p>
+</blockquote>
+<h2 id="Python中数学运算"><a href="#Python中数学运算" class="headerlink" title="Python中数学运算"></a>Python中数学运算</h2><p>Python 提供的基本数据类型 <strong>int</strong>、<strong>float</strong> 可以做整数和浮点的四则运算以及乘方等运算。</p>
+<p>但是，四则运算不局限于int和float，还可以是有理数、矩阵等。</p>
+<p>要表示有理数，可以用一个<strong>Rational类</strong>来表示：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        self.p = p</span><br><span class="line">        self.q = q</span><br></pre></td></tr></table></figure></p>
+<p>p、q 都是整数，表示有理数 p/q。</p>
+<p>如果要让<strong>Rational进行+运算</strong>，需要正确实现<strong>add</strong>：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        self.p = p</span><br><span class="line">        self.q = q</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, r)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Rational(self.p * r.q + self.q * r.p, self.q * r.q)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'%s/%s'</span> % (self.p, self.q)</span><br><span class="line">    __repr__ = __str__</span><br></pre></td></tr></table></figure></p>
+<p>现在可以试试有理数加法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; r1 = Rational(1, 3)</span><br><span class="line">&gt;&gt;&gt; r2 = Rational(1, 2)</span><br><span class="line">&gt;&gt;&gt; print r1 + r2</span><br><span class="line">5/6</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>实现Rational类的四则运算：<br>加法：<strong>add</strong><br>减法：<strong>sub</strong><br>乘法：<strong>mul</strong><br>除法：<strong>div</strong><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">gcd</span><span class="params">(a, b)</span>:</span>    <span class="comment">#约分，找出分子分母的最大公约数</span></span><br><span class="line">    <span class="keyword">if</span> b == <span class="number">0</span>:</span><br><span class="line">        <span class="keyword">return</span> a</span><br><span class="line">    <span class="keyword">return</span> gcd(b, a % b)</span><br><span class="line">    </span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Rational</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, p, q)</span>:</span></span><br><span class="line">        self.p = p</span><br><span class="line">        self.q = q</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__add__</span><span class="params">(self, r)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Rational(self.p * r.q + self.q * r.p, self.q * r.q)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__sub__</span><span class="params">(self, r)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Rational(self.p * r.q - self.q * r.p, self.q * r.q)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__mul__</span><span class="params">(self, r)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Rational(self.p * r.p, self.q * r.q)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__div__</span><span class="params">(self, r)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> Rational(self.p * r.q, self.q * r.p)</span><br><span class="line">        </span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__str__</span><span class="params">(self)</span>:</span></span><br><span class="line">        g = gcd(self.p, self.q)    <span class="comment">#分子分母的最大公约数g</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'%s/%s'</span> % (self.p / g, self.q / g)</span><br><span class="line">    __repr__ = __str__</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<blockquote>
+<p>测试结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">r1 = Rational(1, 2)</span><br><span class="line">r2 = Rational(1, 4)</span><br><span class="line">print r1 + r2</span><br><span class="line">print r1 - r2</span><br><span class="line">print r1 * r2</span><br><span class="line">print r1 / r2</span><br><span class="line"></span><br><span class="line">3/4</span><br><span class="line">1/4</span><br><span class="line">1/8</span><br><span class="line">2/1</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="python中类型转换"><a href="#python中类型转换" class="headerlink" title="python中类型转换"></a>python中类型转换</h2><p><strong>Rational类</strong>实现了有理数运算，但是，如果要把结果转为 <strong>int</strong> 或 <strong>float</strong> 怎么办？</p>
+<p>已学过整数和浮点数的转换：</p>
+<pre><code>&gt;&gt;&gt; int(12.34)
+12
+&gt;&gt;&gt; float(12)
+12.0
+</code></pre><p>如果要把 <strong>Rational</strong> 转为 <strong>int</strong>，应该使用：</p>
+<pre><code>r = Rational(12, 5)
+n = int(r)
+</code></pre><p>要让  <strong>int()</strong> 函数正常工作，只需要实现特殊方法<strong>int</strong>():<br>同理，要让 <strong>float()</strong> 函数正常工作，只需要实现特殊方法<strong>float</strong>()。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">class Rational(object):</span><br><span class="line">    def __init__(self, p, q):</span><br><span class="line">        self.p = p</span><br><span class="line">        self.q = q</span><br><span class="line">    def __int__(self):</span><br><span class="line">        return self.p // self.q</span><br><span class="line">  def __float__(self):</span><br><span class="line">      return  float(self.p) /  self.q</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; print int(Rational(7, 2))</span><br><span class="line">3</span><br><span class="line">&gt;&gt;&gt; print int(Rational(1, 3))</span><br><span class="line">0   </span><br><span class="line">&gt;&gt;&gt;print float(Rational(7, 2))</span><br><span class="line">3.5</span><br><span class="line">&gt;&gt;&gt;print float(Rational(1, 3))</span><br><span class="line">0.333333333333</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="python中-property"><a href="#python中-property" class="headerlink" title="python中 @property"></a>python中 @property</h2><blockquote>
+<p>类比C#中的 属性get/set, get读取属性值，set设置属性值</p>
+</blockquote>
+<p>当我们想要修改一个 <strong>Student</strong> 的 <strong>scroe 属性</strong>时，可以这么写：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">s = Student(<span class="string">'Bob'</span>, <span class="number">59</span>)</span><br><span class="line">s.score = <span class="number">60</span></span><br><span class="line">s.score = <span class="number">1000</span></span><br></pre></td></tr></table></figure></p>
+<p>显然，直接给属性赋值无法检查分数的有效性。</p>
+<p>如果利用两个方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, score)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.__score = score</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">get_score</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__score</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">set_score</span><span class="params">(self, score)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> score &lt; <span class="number">0</span> <span class="keyword">or</span> score &gt; <span class="number">100</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'invalid score'</span>)</span><br><span class="line">        self.__score = score</span><br></pre></td></tr></table></figure></p>
+<p>这样一来，<strong>s.set_score(1000)</strong> 就会报错。</p>
+<p>这种使用 <strong>get/set</strong> 方法来封装对一个属性的访问在许多面向对象编程的语言中都很常见。</p>
+<p>但是写 <strong>s.get_score()</strong> 和 <strong>s.set_score()</strong> 没有直接写 <strong>s.score</strong> 来得直接。</p>
+<p>有一个两全其美的方法——<br>因为Python支持高阶函数，在函数式编程中我们介绍了装饰器函数，可以用装饰器函数把 <strong>get/set</strong> 方法<strong>装饰</strong>成属性调用：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, score)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.__score = score</span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> self.__score</span><br><span class="line"><span class="meta">    @score.setter</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">score</span><span class="params">(self, score)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> score &lt; <span class="number">0</span> <span class="keyword">or</span> score &gt; <span class="number">100</span>:</span><br><span class="line">            <span class="keyword">raise</span> ValueError(<span class="string">'invalid score'</span>)</span><br><span class="line">        self.__score = score</span><br><span class="line">    <span class="comment">#自定义grade属性，可根据score计算A、B、C    </span></span><br><span class="line"><span class="meta">    @property</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">grade</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">if</span> self.score &lt; <span class="number">60</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'C'</span></span><br><span class="line">        <span class="keyword">if</span> self.score &lt; <span class="number">80</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">'B'</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'A'</span></span><br></pre></td></tr></table></figure></p>
+<p><strong>注意:</strong> 第一个score(self)是get方法，用@property装饰；第二个score(self, score)是set方法，用@score.setter装饰，@score.setter是前一个@property装饰后的副产品。<br>现在，就可以像使用属性一样设置score了：</p>
+<blockquote>
+<p>结果如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s = Student(&apos;Bob&apos;, 59)</span><br><span class="line">&gt;&gt;&gt; s.score = 60</span><br><span class="line">&gt;&gt;&gt; print s.score</span><br><span class="line">60</span><br><span class="line">&gt;&gt;&gt; s.score = 1000</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">ValueError: invalid score</span><br><span class="line">&gt;&gt;&gt;print s.grade</span><br><span class="line">B</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>说明对 score 赋值实际调用的是 set方法。</strong></p>
+<h2 id="python中-slots"><a href="#python中-slots" class="headerlink" title="python中 slots"></a>python中 <strong>slots</strong></h2><p>由于Python是动态语言，任何实例在运行期都可以动态地添加属性。</p>
+<p>如果要限制添加的属性，例如，<strong>Student类</strong>只允许添加 name、gender和score 这3个属性，就可以利用Python的一个特殊的<strong>slots</strong>来实现。</p>
+<p><strong>slots</strong>是指一个类允许的属性列表：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(object)</span>:</span></span><br><span class="line">    __slots__ = (<span class="string">'name'</span>, <span class="string">'gender'</span>, <span class="string">'score'</span>)</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, score)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br><span class="line">        self.score = score</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>测试结果如下：<br><figure class="highlight plain"><figcaption><span>s </span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; s.name = &apos;Tim&apos; # OK</span><br><span class="line">&gt;&gt;&gt; s.score = 99 # OK</span><br><span class="line">&gt;&gt;&gt; s.grade = &apos;A&apos;</span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  ...</span><br><span class="line">AttributeError: &apos;Student&apos; object has no attribute &apos;grade&apos;</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<p><strong>slots</strong>的目的是<strong>限制当前类所能拥有的属性</strong>，如果不需要添加任意动态的属性，使用<strong>slots</strong>也能<strong>节省内存</strong>。</p>
+<blockquote>
+<p>应用: 假设Person类通过<strong>slots</strong>定义了name和gender，请在派生类Student中通过<strong>slots</strong>继续添加score的定义，使Student类可以实现name、gender和score 3个属性。<br>Student类的<strong>slots</strong>只需要包含Person类不包含的score属性即可。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    __slots__ = (<span class="string">'name'</span>, <span class="string">'gender'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line"></span><br><span class="line">    __slots__ = (<span class="string">'score'</span>,)    <span class="comment">#name, gender不用再写出来</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, score)</span>:</span></span><br><span class="line">        super(Student, self).__init__(name, gender)  <span class="comment">#super.__init()初始化父类属性，不要忘记调用！</span></span><br><span class="line">        self.score = score</span><br><span class="line"></span><br><span class="line">s = Student(<span class="string">'Bob'</span>, <span class="string">'male'</span>, <span class="number">59</span>)</span><br><span class="line">s.name = <span class="string">'Tim'</span></span><br><span class="line">s.score = <span class="number">99</span></span><br><span class="line"><span class="keyword">print</span> s.score</span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="python中-call"><a href="#python中-call" class="headerlink" title="python中 call"></a>python中 <strong>call</strong></h2><p>在Python中，<strong>函数</strong>其实是一个<strong>对象</strong>：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; f = abs</span><br><span class="line">&gt;&gt;&gt; f.__name__</span><br><span class="line">&apos;abs&apos;</span><br><span class="line">&gt;&gt;&gt; f(-123)</span><br><span class="line">123</span><br></pre></td></tr></table></figure></p>
+<p>由于 <strong>f</strong> 可以被调用，所以，<strong>f</strong> 被称为<strong>可调用对象</strong>。</p>
+<p>所有的函数都是可调用对象。</p>
+<p>一个<strong>类实例</strong>也可以变成一个<strong>可调用对象</strong>，只需要实现一个特殊方法<strong>call</strong>()。</p>
+<p>我们把 <strong>Person 类</strong>变成一个可调用对象：</p>
+<blockquote>
+<p>这样就可以 调用函数 那样来 调用一个类对象实例</p>
+</blockquote>
+<p>首先把Person类变成一个可调用对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, friend)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'My name is %s...'</span> % self.name</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'My friend is %s...'</span> % friend</span><br></pre></td></tr></table></figure></p>
+<p>现在可以对 <strong>Person 实例</strong>直接调用：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; p = Person(&apos;Bob&apos;, &apos;male&apos;)</span><br><span class="line">&gt;&gt;&gt; p(&apos;Tim&apos;)</span><br><span class="line">My name is Bob...</span><br><span class="line">My friend is Tim...</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：</strong> 单看 <strong>p(‘Tim’)</strong> 你无法确定 <strong>p</strong> 是一个<strong>函数</strong>还是一个<strong>类实例</strong>，所以，在Python中，函数也是对象，对象和函数的区别并不显著。</p>
+<blockquote>
+<p>之前写过一个斐波那契数列函数：<br>class Fib(object):<br>现在加一个<strong>call</strong>方法，让调用可以更简单：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Fib</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__call__</span><span class="params">(self, num)</span>:</span></span><br><span class="line">        a, b, L = <span class="number">0</span>, <span class="number">1</span>, []</span><br><span class="line">        <span class="keyword">for</span> n <span class="keyword">in</span> range(num):</span><br><span class="line">            L.append(a)</span><br><span class="line">            a, b = b, a+b</span><br><span class="line">        <span class="keyword">return</span> L</span><br><span class="line"></span><br><span class="line">f = Fib()</span><br><span class="line"><span class="keyword">print</span> f(<span class="number">10</span>)    <span class="comment">#调用Fib类就像调用函数一样，非常方便</span></span><br></pre></td></tr></table></figure></p>
+</blockquote>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>语法到此基本学完，下面就可以学一些更深层的内容，比如：<br><strong>IO</strong>：文件和Socket<br><strong>多任务</strong>：进程和线程<br><strong>数据库</strong>：    python支持一个通用的db API，可以连接各种不同的关系数据库。<br><strong>Web开发</strong>：可以构建一个基于Web的服务，</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div>坚持原创分享，您的支持将鼓励我继续创作！</div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="劉淵 微信支付">
+        <p>微信支付</p>
+      </div>
+    
+
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="劉淵 支付宝">
+        <p>支付宝</p>
+      </div>
+    
+
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+      <div>
+        <ul class="post-copyright">
+  <li class="post-copyright-author">
+    <strong>本文作者：</strong>
+    劉淵
+  </li>
+  <li class="post-copyright-link">
+    <strong>本文链接：</strong>
+    <a href="http://yoursite.com/2019/01/12/python定制类/" title="python定制类">http://yoursite.com/2019/01/12/python定制类/</a>
+  </li>
+  <li class="post-copyright-license">
+    <strong>版权声明： </strong>
+    本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/3.0/" rel="external nofollow" target="_blank">CC BY-NC-SA 3.0</a> 许可协议。转载请注明出处！
+  </li>
+</ul>
+
+      </div>
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Python/" rel="tag"># Python</a>
+          
+            <a href="/tags/编程/" rel="tag"># 编程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/01/09/HTTP状态码302解决方法/" rel="next" title="HTTP状态码302解决方法">
+                <i class="fa fa-chevron-left"></i> HTTP状态码302解决方法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+        
+<script>
+  with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='//bdimg.share.baidu.com/static/api/js/share.js?cdnversion='+~(-new Date()/36e5)];
+</script>
+
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+    <div class="comments" id="comments">
+      <div id="lv-container" data-id="city" data-uid="MTAyMC80MTIwNy8xNzc1NQ"></div>
+    </div>
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image" src="/images/avatar.png" alt="劉淵">
+            
+              <p class="site-author-name" itemprop="name">劉淵</p>
+              <p class="site-description motion-element" itemprop="description">To be a Geek</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">7</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">3</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index-1.html">
+                  <span class="site-state-item-count">4</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/AlexGoke" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:alex.goke@outlook.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://plus.google.com" target="_blank" title="Google">
+                      
+                        <i class="fa fa-fw fa-google"></i>Google</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://stackoverflow.com" target="_blank" title="StackOverflow">
+                      
+                        <i class="fa fa-fw fa-stack-overflow"></i>StackOverflow</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://youtube.com" target="_blank" title="YouTube">
+                      
+                        <i class="fa fa-fw fa-youtube"></i>YouTube</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://instagram.com" target="_blank" title="Instagram">
+                      
+                        <i class="fa fa-fw fa-instagram"></i>Instagram</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="https://500px.com" target="_blank" title="500Px">
+                      
+                        <i class="fa fa-fw fa-500px"></i>500Px</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+            <div class="links-of-blogroll motion-element links-of-blogroll-block">
+              <div class="links-of-blogroll-title">
+                <i class="fa  fa-fw fa-link"></i>
+                Links
+              </div>
+              <ul class="links-of-blogroll-list">
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://example.com/" title="Title" target="_blank">Title</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://macshuo.com/" title="MacTalk" target="_blank">MacTalk</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://leetcode-cn.com/" title="LeetCode" target="_blank">LeetCode</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.w3cschool.cn/" title="W3Cschool" target="_blank">W3Cschool</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.runoob.com/" title="RUNOOB" target="_blank">RUNOOB</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="http://www.codecademy.com/" title="codecademy" target="_blank">codecademy</a>
+                  </li>
+                
+                  <li class="links-of-blogroll-item">
+                    <a href="https://www.shiyanlou.com/" title="shiyanlou" target="_blank">shiyanlou</a>
+                  </li>
+                
+              </ul>
+            </div>
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#定制类"><span class="nav-number">1.</span> <span class="nav-text">定制类</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#特殊方法"><span class="nav-number">1.1.</span> <span class="nav-text">特殊方法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中-str-和-repr"><span class="nav-number">1.2.</span> <span class="nav-text">Python中 str  和 repr </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中-cmp"><span class="nav-number">1.3.</span> <span class="nav-text">Python中 cmp </span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中len"><span class="nav-number">1.4.</span> <span class="nav-text">Python中len</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Python中数学运算"><span class="nav-number">1.5.</span> <span class="nav-text">Python中数学运算</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中类型转换"><span class="nav-number">1.6.</span> <span class="nav-text">python中类型转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中-property"><span class="nav-number">1.7.</span> <span class="nav-text">python中 @property</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中-slots"><span class="nav-number">1.8.</span> <span class="nav-text">python中 slots</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中-call"><span class="nav-number">1.9.</span> <span class="nav-text">python中 call</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#总结"><span class="nav-number">1.10.</span> <span class="nav-text">总结</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; 2018 &mdash; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">AlexGoke</span>
+
+  
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-area-chart"></i>
+    </span>
+    
+      <span class="post-meta-item-text">Site words total count&#58;</span>
+    
+    <span title="Site words total count">14.9k</span>
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+<div class="busuanzi-count">
+  <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+  
+    <span class="site-uv">
+      <i class="fa fa-user">访客数</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_uv"></span>
+      
+    </span>
+  
+
+  
+    <span class="site-pv">
+      <i class="fa fa-eye">访问量</i>
+      <span class="busuanzi-value" id="busuanzi_value_site_pv"></span>
+      
+    </span>
+  
+</div>
+
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script id="ribbon" type="text/javascript" size="300" alpha="0.6" zindex="-1" src="/lib/canvas-ribbon/canvas-ribbon.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+    <script type="text/javascript">
+      (function(d, s) {
+        var j, e = d.getElementsByTagName(s)[0];
+        if (typeof LivereTower === 'function') { return; }
+        j = d.createElement(s);
+        j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+        j.async = true;
+        e.parentNode.insertBefore(j, e);
+      })(document, 'script');
+    </script>
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  <script type="text/javascript">
+    // Popup Window;
+    var isfetched = false;
+    var isXml = true;
+    // Search DB path;
+    var search_path = "search.xml";
+    if (search_path.length === 0) {
+      search_path = "search.xml";
+    } else if (/json$/i.test(search_path)) {
+      isXml = false;
+    }
+    var path = "/" + search_path;
+    // monitor main search box;
+
+    var onPopupClose = function (e) {
+      $('.popup').hide();
+      $('#local-search-input').val('');
+      $('.search-result-list').remove();
+      $('#no-result').remove();
+      $(".local-search-pop-overlay").remove();
+      $('body').css('overflow', '');
+    }
+
+    function proceedsearch() {
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay"></div>')
+        .css('overflow', 'hidden');
+      $('.search-popup-overlay').click(onPopupClose);
+      $('.popup').toggle();
+      var $localSearchInput = $('#local-search-input');
+      $localSearchInput.attr("autocapitalize", "none");
+      $localSearchInput.attr("autocorrect", "off");
+      $localSearchInput.focus();
+    }
+
+    // search function;
+    var searchFunc = function(path, search_id, content_id) {
+      'use strict';
+
+      // start loading animation
+      $("body")
+        .append('<div class="search-popup-overlay local-search-pop-overlay">' +
+          '<div id="search-loading-icon">' +
+          '<i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>' +
+          '</div>' +
+          '</div>')
+        .css('overflow', 'hidden');
+      $("#search-loading-icon").css('margin', '20% auto 0 auto').css('text-align', 'center');
+
+      $.ajax({
+        url: path,
+        dataType: isXml ? "xml" : "json",
+        async: true,
+        success: function(res) {
+          // get the contents from search data
+          isfetched = true;
+          $('.popup').detach().appendTo('.header-inner');
+          var datas = isXml ? $("entry", res).map(function() {
+            return {
+              title: $("title", this).text(),
+              content: $("content",this).text(),
+              url: $("url" , this).text()
+            };
+          }).get() : res;
+          var input = document.getElementById(search_id);
+          var resultContent = document.getElementById(content_id);
+          var inputEventFunction = function() {
+            var searchText = input.value.trim().toLowerCase();
+            var keywords = searchText.split(/[\s\-]+/);
+            if (keywords.length > 1) {
+              keywords.push(searchText);
+            }
+            var resultItems = [];
+            if (searchText.length > 0) {
+              // perform local searching
+              datas.forEach(function(data) {
+                var isMatch = false;
+                var hitCount = 0;
+                var searchTextCount = 0;
+                var title = data.title.trim();
+                var titleInLowerCase = title.toLowerCase();
+                var content = data.content.trim().replace(/<[^>]+>/g,"");
+                var contentInLowerCase = content.toLowerCase();
+                var articleUrl = decodeURIComponent(data.url);
+                var indexOfTitle = [];
+                var indexOfContent = [];
+                // only match articles with not empty titles
+                if(title != '') {
+                  keywords.forEach(function(keyword) {
+                    function getIndexByWord(word, text, caseSensitive) {
+                      var wordLen = word.length;
+                      if (wordLen === 0) {
+                        return [];
+                      }
+                      var startPosition = 0, position = [], index = [];
+                      if (!caseSensitive) {
+                        text = text.toLowerCase();
+                        word = word.toLowerCase();
+                      }
+                      while ((position = text.indexOf(word, startPosition)) > -1) {
+                        index.push({position: position, word: word});
+                        startPosition = position + wordLen;
+                      }
+                      return index;
+                    }
+
+                    indexOfTitle = indexOfTitle.concat(getIndexByWord(keyword, titleInLowerCase, false));
+                    indexOfContent = indexOfContent.concat(getIndexByWord(keyword, contentInLowerCase, false));
+                  });
+                  if (indexOfTitle.length > 0 || indexOfContent.length > 0) {
+                    isMatch = true;
+                    hitCount = indexOfTitle.length + indexOfContent.length;
+                  }
+                }
+
+                // show search results
+
+                if (isMatch) {
+                  // sort index by position of keyword
+
+                  [indexOfTitle, indexOfContent].forEach(function (index) {
+                    index.sort(function (itemLeft, itemRight) {
+                      if (itemRight.position !== itemLeft.position) {
+                        return itemRight.position - itemLeft.position;
+                      } else {
+                        return itemLeft.word.length - itemRight.word.length;
+                      }
+                    });
+                  });
+
+                  // merge hits into slices
+
+                  function mergeIntoSlice(text, start, end, index) {
+                    var item = index[index.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    var hits = [];
+                    var searchTextCountInSlice = 0;
+                    while (position + word.length <= end && index.length != 0) {
+                      if (word === searchText) {
+                        searchTextCountInSlice++;
+                      }
+                      hits.push({position: position, length: word.length});
+                      var wordEnd = position + word.length;
+
+                      // move to next position of hit
+
+                      index.pop();
+                      while (index.length != 0) {
+                        item = index[index.length - 1];
+                        position = item.position;
+                        word = item.word;
+                        if (wordEnd > position) {
+                          index.pop();
+                        } else {
+                          break;
+                        }
+                      }
+                    }
+                    searchTextCount += searchTextCountInSlice;
+                    return {
+                      hits: hits,
+                      start: start,
+                      end: end,
+                      searchTextCount: searchTextCountInSlice
+                    };
+                  }
+
+                  var slicesOfTitle = [];
+                  if (indexOfTitle.length != 0) {
+                    slicesOfTitle.push(mergeIntoSlice(title, 0, title.length, indexOfTitle));
+                  }
+
+                  var slicesOfContent = [];
+                  while (indexOfContent.length != 0) {
+                    var item = indexOfContent[indexOfContent.length - 1];
+                    var position = item.position;
+                    var word = item.word;
+                    // cut out 100 characters
+                    var start = position - 20;
+                    var end = position + 80;
+                    if(start < 0){
+                      start = 0;
+                    }
+                    if (end < position + word.length) {
+                      end = position + word.length;
+                    }
+                    if(end > content.length){
+                      end = content.length;
+                    }
+                    slicesOfContent.push(mergeIntoSlice(content, start, end, indexOfContent));
+                  }
+
+                  // sort slices in content by search text's count and hits' count
+
+                  slicesOfContent.sort(function (sliceLeft, sliceRight) {
+                    if (sliceLeft.searchTextCount !== sliceRight.searchTextCount) {
+                      return sliceRight.searchTextCount - sliceLeft.searchTextCount;
+                    } else if (sliceLeft.hits.length !== sliceRight.hits.length) {
+                      return sliceRight.hits.length - sliceLeft.hits.length;
+                    } else {
+                      return sliceLeft.start - sliceRight.start;
+                    }
+                  });
+
+                  // select top N slices in content
+
+                  var upperBound = parseInt('1');
+                  if (upperBound >= 0) {
+                    slicesOfContent = slicesOfContent.slice(0, upperBound);
+                  }
+
+                  // highlight title and content
+
+                  function highlightKeyword(text, slice) {
+                    var result = '';
+                    var prevEnd = slice.start;
+                    slice.hits.forEach(function (hit) {
+                      result += text.substring(prevEnd, hit.position);
+                      var end = hit.position + hit.length;
+                      result += '<b class="search-keyword">' + text.substring(hit.position, end) + '</b>';
+                      prevEnd = end;
+                    });
+                    result += text.substring(prevEnd, slice.end);
+                    return result;
+                  }
+
+                  var resultItem = '';
+
+                  if (slicesOfTitle.length != 0) {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + highlightKeyword(title, slicesOfTitle[0]) + "</a>";
+                  } else {
+                    resultItem += "<li><a href='" + articleUrl + "' class='search-result-title'>" + title + "</a>";
+                  }
+
+                  slicesOfContent.forEach(function (slice) {
+                    resultItem += "<a href='" + articleUrl + "'>" +
+                      "<p class=\"search-result\">" + highlightKeyword(content, slice) +
+                      "...</p>" + "</a>";
+                  });
+
+                  resultItem += "</li>";
+                  resultItems.push({
+                    item: resultItem,
+                    searchTextCount: searchTextCount,
+                    hitCount: hitCount,
+                    id: resultItems.length
+                  });
+                }
+              })
+            };
+            if (keywords.length === 1 && keywords[0] === "") {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-search fa-5x" /></div>'
+            } else if (resultItems.length === 0) {
+              resultContent.innerHTML = '<div id="no-result"><i class="fa fa-frown-o fa-5x" /></div>'
+            } else {
+              resultItems.sort(function (resultLeft, resultRight) {
+                if (resultLeft.searchTextCount !== resultRight.searchTextCount) {
+                  return resultRight.searchTextCount - resultLeft.searchTextCount;
+                } else if (resultLeft.hitCount !== resultRight.hitCount) {
+                  return resultRight.hitCount - resultLeft.hitCount;
+                } else {
+                  return resultRight.id - resultLeft.id;
+                }
+              });
+              var searchResultList = '<ul class=\"search-result-list\">';
+              resultItems.forEach(function (result) {
+                searchResultList += result.item;
+              })
+              searchResultList += "</ul>";
+              resultContent.innerHTML = searchResultList;
+            }
+          }
+
+          if ('auto' === 'auto') {
+            input.addEventListener('input', inputEventFunction);
+          } else {
+            $('.search-icon').click(inputEventFunction);
+            input.addEventListener('keypress', function (event) {
+              if (event.keyCode === 13) {
+                inputEventFunction();
+              }
+            });
+          }
+
+          // remove loading animation
+          $(".local-search-pop-overlay").remove();
+          $('body').css('overflow', '');
+
+          proceedsearch();
+        }
+      });
+    }
+
+    // handle and trigger popup window;
+    $('.popup-trigger').click(function(e) {
+      e.stopPropagation();
+      if (isfetched === false) {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+      } else {
+        proceedsearch();
+      };
+    });
+
+    $('.popup-btn-close').click(onPopupClose);
+    $('.popup').click(function(e){
+      e.stopPropagation();
+    });
+    $(document).on('keyup', function (event) {
+      var shouldDismissSearchPopup = event.which === 27 &&
+        $('.search-popup').is(':visible');
+      if (shouldDismissSearchPopup) {
+        onPopupClose();
+      }
+    });
+  </script>
+
+
+
+
+
+  
+
+  
+  <script src="https://cdn1.lncld.net/static/js/av-core-mini-0.6.4.js"></script>
+  <script>AV.initialize("3K3LzRoep63czqIDjU5iJdJB-gzGzoHsz", "0n6WkekPAjNS0UaSuf1jC4Jy");</script>
+  <script>
+    function showTime(Counter) {
+      var query = new AV.Query(Counter);
+      var entries = [];
+      var $visitors = $(".leancloud_visitors");
+
+      $visitors.each(function () {
+        entries.push( $(this).attr("id").trim() );
+      });
+
+      query.containedIn('url', entries);
+      query.find()
+        .done(function (results) {
+          var COUNT_CONTAINER_REF = '.leancloud-visitors-count';
+
+          if (results.length === 0) {
+            $visitors.find(COUNT_CONTAINER_REF).text(0);
+            return;
+          }
+
+          for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            var url = item.get('url');
+            var time = item.get('time');
+            var element = document.getElementById(url);
+
+            $(element).find(COUNT_CONTAINER_REF).text(time);
+          }
+          for(var i = 0; i < entries.length; i++) {
+            var url = entries[i];
+            var element = document.getElementById(url);
+            var countSpan = $(element).find(COUNT_CONTAINER_REF);
+            if( countSpan.text() == '') {
+              countSpan.text(0);
+            }
+          }
+        })
+        .fail(function (object, error) {
+          console.log("Error: " + error.code + " " + error.message);
+        });
+    }
+
+    function addCount(Counter) {
+      var $visitors = $(".leancloud_visitors");
+      var url = $visitors.attr('id').trim();
+      var title = $visitors.attr('data-flag-title').trim();
+      var query = new AV.Query(Counter);
+
+      query.equalTo("url", url);
+      query.find({
+        success: function(results) {
+          if (results.length > 0) {
+            var counter = results[0];
+            counter.fetchWhenSave(true);
+            counter.increment("time");
+            counter.save(null, {
+              success: function(counter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(counter.get('time'));
+              },
+              error: function(counter, error) {
+                console.log('Failed to save Visitor num, with error message: ' + error.message);
+              }
+            });
+          } else {
+            var newcounter = new Counter();
+            /* Set ACL */
+            var acl = new AV.ACL();
+            acl.setPublicReadAccess(true);
+            acl.setPublicWriteAccess(true);
+            newcounter.setACL(acl);
+            /* End Set ACL */
+            newcounter.set("title", title);
+            newcounter.set("url", url);
+            newcounter.set("time", 1);
+            newcounter.save(null, {
+              success: function(newcounter) {
+                var $element = $(document.getElementById(url));
+                $element.find('.leancloud-visitors-count').text(newcounter.get('time'));
+              },
+              error: function(newcounter, error) {
+                console.log('Failed to create');
+              }
+            });
+          }
+        },
+        error: function(error) {
+          console.log('Error:' + error.code + " " + error.message);
+        }
+      });
+    }
+
+    $(function() {
+      var Counter = AV.Object.extend("Counter");
+      if ($('.leancloud_visitors').length == 1) {
+        addCount(Counter);
+      } else if ($('.post-title-link').length > 1) {
+        showTime(Counter);
+      }
+    });
+  </script>
+
+
+
+  
+
+  
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';        
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
+
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
