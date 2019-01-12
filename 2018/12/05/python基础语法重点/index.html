@@ -88,7 +88,7 @@
 <meta property="og:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/05/python基础语法重点/python.jpg">
-<meta property="og:updated_time" content="2019-01-09T06:13:04.248Z">
+<meta property="og:updated_time" content="2019-01-12T01:54:46.427Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Python基础语法重点">
 <meta name="twitter:description" content="用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的初级知识总结在这里。">
@@ -456,11 +456,11 @@
         <p><img src="/2018/12/05/python基础语法重点/python.jpg" alt="图"><br>用一周学习完Python的基础语法知识以后，再回头浏览一遍语法知识，将一些python独有的和容易被疏漏的<strong>初级知识</strong>总结在这里。<br><a id="more"></a></p>
 <p>﻿@<a href="Python初级语法补充">TOC</a></p>
 <h1 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h1><h2 id="Python中Unicode字符串"><a href="#Python中Unicode字符串" class="headerlink" title="Python中Unicode字符串"></a>Python中Unicode字符串</h2><p>如果一个字符串包含很多需要转义的字符，对每一个字符都进行转义会很麻烦。为了避免这种情况，我们可以在字符串前面加个前缀 <code>r</code> ，表示这是一个 raw 字符串，里面的字符就不需要转义了。例如：</p>
-<pre><code>r&apos;\(~_~)/ \(~_~)/&apos;
-</code></pre><p>如果字符串既包含’又包含”怎么办？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">r&apos;\(~_~)/ \(~_~)/&apos;</span><br></pre></td></tr></table></figure>
+<p>如果字符串既包含’又包含”怎么办？</p>
 <p>这个时候，就需要对字符串的某些特殊字符进行“<code>转义</code>”，Python字符串用<code>\</code>进行转义。<br>要表示字符串 Bob said “I’m OK”.<br>由于 ‘ 和 “ 会引起歧义，因此，我们在它前面插入一个\表示这是一个普通字符，不代表字符串的起始，因此，这个字符串又可以表示为</p>
-<pre><code>&apos;Bob said \&quot;I\&apos;m OK\&quot;.&apos;
-</code></pre><h2 id="Python中Unicode字符串-1"><a href="#Python中Unicode字符串-1" class="headerlink" title="Python中Unicode字符串"></a>Python中Unicode字符串</h2><p>Python在后来添加了对Unicode的支持，以Unicode表示的字符串用u’…’表示，比如：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&apos;Bob said \&quot;I\&apos;m OK\&quot;.&apos;</span><br></pre></td></tr></table></figure>
+<h2 id="Python中Unicode字符串-1"><a href="#Python中Unicode字符串-1" class="headerlink" title="Python中Unicode字符串"></a>Python中Unicode字符串</h2><p>Python在后来添加了对Unicode的支持，以Unicode表示的字符串用u’…’表示，比如：</p>
 <pre><code>print u&apos;中文&apos;
 中文
 </code></pre><p>如果中文字符串在Python环境下遇到 UnicodeDecodeError，这是因为 .py文件保存的格式有问题。可以在第一行添加注释</p>

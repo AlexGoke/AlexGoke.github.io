@@ -87,7 +87,7 @@
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2018/12/23/python类的继承/grass.jpg">
 <meta property="og:image" content="http://img.mukewang.com/54daf037000142d207580552.jpg">
-<meta property="og:updated_time" content="2018-12-23T08:08:08.032Z">
+<meta property="og:updated_time" content="2019-01-12T03:49:02.763Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="python类的继承">
 <meta name="twitter:image" content="http://yoursite.com/2018/12/23/python类的继承/grass.jpg">
@@ -453,17 +453,12 @@
       
         <p><img src="/2018/12/23/python类的继承/grass.jpg" alt="图"><br><a id="more"></a></p>
 <h1 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h1><blockquote>
-<p>总是从某个类继承，如果没有具体父类的话，那么都是从object继承。</p>
+<p>总是从某个类继承，如果没有具体父类的话，那么都是从object继承。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>class MyClass(object):
-    pass
-</code></pre><blockquote>
-<p>不要忘记调用super().<strong> init </strong><br>用来初始化父类的，如果忘记调用，那么父类的属性就可能没有被初始化。</p>
+<blockquote>
+<p>不要忘记调用super().<strong> init </strong><br>用来初始化父类的，如果忘记调用，那么父类的属性就可能没有被初始化。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, args)</span>:</span></span><br><span class="line">    super(SubClass, self).__init__(args)</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
 </blockquote>
-<pre><code>def __init__(self, args):
-    super(SubClass, self).__init__(args)
-    pass
-</code></pre><h2 id="python中继承一个类"><a href="#python中继承一个类" class="headerlink" title="python中继承一个类"></a>python中继承一个类</h2><p>如果已经定义了<strong>Person</strong>类，需要定义新的<strong>Student</strong>和<strong>Teacher</strong>类时，可以直接从Person类继承：</p>
+<h2 id="python中继承一个类"><a href="#python中继承一个类" class="headerlink" title="python中继承一个类"></a>python中继承一个类</h2><p>如果已经定义了<strong>Person</strong>类，需要定义新的<strong>Student</strong>和<strong>Teacher</strong>类时，可以直接从Person类继承：</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br></pre></td></tr></table></figure>
 <p>定义<strong>Student</strong>类时，只需要把额外的属性加上，例如score：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, score)</span>:</span></span><br><span class="line">        super(Student, self).__init__(name, gender)</span><br><span class="line">        self.score = score</span><br></pre></td></tr></table></figure></p>
 <p>一定要用 <strong>super(Student, self).<strong>init</strong>(name, gender)</strong> 去初始化父类，否则，继承自 <strong>Person</strong> 的 <strong>Student</strong> 将没有 <strong>name</strong> 和 <strong>gender</strong>。</p>
