@@ -86,11 +86,11 @@
 <meta property="og:site_name" content="AlexGoke World">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://yoursite.com/2019/07/25/MySQL中InnoDB和MyISAM的联系与区别/mysql.jpg">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuL2I1NmNiNGNjM2YyMzQxY2E4OWM0Nzc1MTVkMWU4NzNiLnBuZw">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuL2IzNGEwZjNlNmNjOTQ4MWFiNjhkNDMzNmJmODEwOWZlLnBuZw">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuLzUyYzA3Yjk5YWU5MDRkN2U5NzM5ZjZkZGE2M2U4YmQxLnBuZw">
-<meta property="og:image" content="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuLzUyNTBlZTE0OGIwMjRhYjU4MWY4Y2RjYWQyMzM4OGU1LnBuZw">
-<meta property="og:updated_time" content="2019-07-25T12:09:29.825Z">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190725212738480.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190725212818674.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190725212836124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:image" content="https://img-blog.csdnimg.cn/20190725212855509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70">
+<meta property="og:updated_time" content="2019-07-25T13:30:04.805Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="MySQL中InnoDB和MyISAM的联系与区别">
 <meta name="twitter:image" content="http://yoursite.com/2019/07/25/MySQL中InnoDB和MyISAM的联系与区别/mysql.jpg">
@@ -467,12 +467,13 @@
       
         <p><img src="/2019/07/25/MySQL中InnoDB和MyISAM的联系与区别/mysql.jpg" alt="图"></p>
 <a id="more"></a>
-<p>﻿&gt;  InnoDB 和 MyISAM 是 MySQL 的两个「存储引擎」。</p>
+<p>﻿﻿&gt;  InnoDB 和 MyISAM 是 MySQL 的两个「存储引擎」。</p>
 <h1 id="数据库存储引擎"><a href="#数据库存储引擎" class="headerlink" title="数据库存储引擎"></a>数据库存储引擎</h1><blockquote>
 <p>数据库存储引擎是数据库底层软件组织，数据库管理系统（DBMS）使用<strong>数据引擎</strong>进行创建、查询、更新和删除数据。不同的存储引擎提供不同的存储机制、索引技巧、锁定水平等功能，使用不同的存储引擎，还可以获得<strong>特定的功能</strong>。</p>
 </blockquote>
 <p><code>SHOW ENGINES;</code> 查看自己的数据库类型</p>
-<p><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuL2I1NmNiNGNjM2YyMzQxY2E4OWM0Nzc1MTVkMWU4NzNiLnBuZw" alt="在这里插入图片描述"><br>     可以看出数据库为我们提供了非常多的存储引擎，从表中看出，InnoDB 的 Support 列是 DEFAULT，表明在我的数据库服务器上，InnoDB 是默认的数据库引擎，不过 MySQL 对于多引擎有很好的兼容，一个数据库服务器上不同的数据库完全可以使用不同的数据引擎，甚至一个数据库中的多个表也可以使用不同的引擎。</p>
+<p><img src="https://img-blog.csdnimg.cn/20190725212738480.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>可以看出数据库为我们提供了非常多的存储引擎，从表中看出，InnoDB 的 Support 列是 DEFAULT，表明在我的数据库服务器上，InnoDB 是默认的数据库引擎，不过 MySQL 对于多引擎有很好的兼容，一个数据库服务器上不同的数据库完全可以使用不同的数据引擎，甚至一个数据库中的多个表也可以使用不同的引擎。</p>
 <p>从一些文档中我们可以总结出这两个引擎的一些<strong>差异</strong>：</p>
 <ul>
 <li>InnoDB 支持事务，MyISAM 不支持，对于 InnoDB 每一条 SQL 语句都默认封装成事务进行提交，这样就会影响速度，优化速度的方式是将多条 SQL 语句放在 begin 和 commit 之间，组成一个事务； </li>
@@ -489,7 +490,9 @@
 <li>InnoDB 中 B+ 树的数据结构中存储的都是<strong>实际的数据</strong>，这种索引有被称为<strong>聚集索引</strong>。</li>
 </ul>
 </blockquote>
-<p><strong>B树 和 B+树</strong><br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuL2IzNGEwZjNlNmNjOTQ4MWFiNjhkNDMzNmJmODEwOWZlLnBuZw" alt="B树"><br>B+ 树是 B 树的一个变种，对于 B 树来说：</p>
+<p><strong>B树 和 B+树</strong></p>
+<p><img src="https://img-blog.csdnimg.cn/20190725212818674.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>B+ 树是 B 树的一个变种，对于 B 树来说：</p>
 <blockquote>
 <p>B 树属于多叉树又名<strong>平衡多路查找树</strong>，其规则是：</p>
 <ul>
@@ -514,8 +517,10 @@
 <li>非聚集索引（Non-clustered)：非聚集索引指定表的逻辑顺序。数据存储在一个位置，索引存储在另一个位置，索引中包含指向数据存储位置的指针。可以有多个，小于249个</li>
 </ul>
 </blockquote>
-<p><strong>MyISAM</strong><br>回到 MyISAM，其索引结构如下图所示，由于 MyISAM 的索引文件仅仅保存<strong>数据记录的地址</strong>。在 MyISAM 中，主索引和辅助索引（Secondary key）在结构上没有任何区别：<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuLzUyYzA3Yjk5YWU5MDRkN2U5NzM5ZjZkZGE2M2U4YmQxLnBuZw" alt="在这里插入图片描述"><br>MyISAM 中索引检索的算法：首先按照 B+Tree 搜索算法搜索索引，如果指定的 Key 存在，则取出其 data 域的值，然后以 data 域的值为地址，读取相应数据记录。</p>
-<p><strong>InnoDB</strong><br>对于 InnoDB 来说，表数据文件本身就是按 B+Tree 组织的一个索引结构，这棵树的叶节点 data 域保存了<strong>完整的数据记录</strong>。<br><img src="https://imgconvert.csdnimg.cn/aHR0cHM6Ly9zdGF0aWMueG10LmNuLzUyNTBlZTE0OGIwMjRhYjU4MWY4Y2RjYWQyMzM4OGU1LnBuZw" alt="在这里插入图片描述"><br>由于 InnoDB 利用的<strong>数据库主键</strong>作为索引 Key，所以 InnoDB 数据表文件本身就是主索引，且因为 InnoDB 数据文件需要按照主键聚集，所以使用 InnoDB 作为数据引擎的表需要有个<strong>主键</strong>，如果没有显式指定的话 MySQL 会尝试<strong>自动选择</strong>一个可以唯一标识数据的列作为主键，如果无法找到，则会生成一个隐含字段作为主键，这个字段长度为6个字节，类型为长整形。</p>
+<p><strong>MyISAM</strong><br>回到 MyISAM，其索引结构如下图所示，由于 MyISAM 的索引文件仅仅保存<strong>数据记录的地址</strong>。在 MyISAM 中，主索引和辅助索引（Secondary key）在结构上没有任何区别：</p>
+<p><img src="https://img-blog.csdnimg.cn/20190725212836124.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"></p>
+<p>MyISAM 中索引检索的算法：首先按照 B+Tree 搜索算法搜索索引，如果指定的 Key 存在，则取出其 data 域的值，然后以 data 域的值为地址，读取相应数据记录。</p>
+<p><strong>InnoDB</strong><br>对于 InnoDB 来说，表数据文件本身就是按 B+Tree 组织的一个索引结构，这棵树的叶节点 data 域保存了<strong>完整的数据记录</strong>。<br><img src="https://img-blog.csdnimg.cn/20190725212855509.jpg?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L3dlaXhpbl80MDMxNDM4NQ==,size_16,color_FFFFFF,t_70" alt="在这里插入图片描述"><br>由于 InnoDB 利用的<strong>数据库主键</strong>作为索引 Key，所以 InnoDB 数据表文件本身就是主索引，且因为 InnoDB 数据文件需要按照主键聚集，所以使用 InnoDB 作为数据引擎的表需要有个<strong>主键</strong>，如果没有显式指定的话 MySQL 会尝试<strong>自动选择</strong>一个可以唯一标识数据的列作为主键，如果无法找到，则会生成一个隐含字段作为主键，这个字段长度为6个字节，类型为长整形。</p>
 
       
     </div>
