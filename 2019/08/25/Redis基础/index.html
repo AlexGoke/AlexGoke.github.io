@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Python,编程,">
+  <meta name="keywords" content="Redis,">
 
 
 
@@ -79,18 +79,17 @@
 
 
 
-<meta name="keywords" content="Python,编程">
+<meta name="keywords" content="Redis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python类的继承">
-<meta property="og:url" content="http://yoursite.com/2018/12/23/python类的继承/index.html">
+<meta property="og:title" content="Redis基础">
+<meta property="og:url" content="http://yoursite.com/2019/08/25/Redis基础/index.html">
 <meta property="og:site_name" content="AlexGoke World">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:image" content="http://yoursite.com/2018/12/23/python类的继承/grass.jpg">
-<meta property="og:image" content="http://img.mukewang.com/54daf037000142d207580552.jpg">
-<meta property="og:updated_time" content="2019-01-12T03:49:02.763Z">
+<meta property="og:image" content="http://yoursite.com/2019/08/25/Redis基础/Redis.jpg">
+<meta property="og:updated_time" content="2019-08-25T04:27:15.436Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python类的继承">
-<meta name="twitter:image" content="http://yoursite.com/2018/12/23/python类的继承/grass.jpg">
+<meta name="twitter:title" content="Redis基础">
+<meta name="twitter:image" content="http://yoursite.com/2019/08/25/Redis基础/Redis.jpg">
 
 
 
@@ -120,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/23/python类的继承/">
+  <link rel="canonical" href="http://yoursite.com/2019/08/25/Redis基础/">
 
 
 
 
 
-  <title>python类的继承 | AlexGoke World</title>
+  <title>Redis基础 | AlexGoke World</title>
   
 
 
@@ -315,7 +314,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/23/python类的继承/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/08/25/Redis基础/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="劉淵">
@@ -332,7 +331,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">python类的继承</h1>
+          <h1 class="post-title" itemprop="name headline">Redis基础</h1>
         
 
         <div class="post-meta">
@@ -344,8 +343,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-23T16:03:17+08:00">
-                2018-12-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-08-25T12:13:40+08:00">
+                2019-08-25
               </time>
             
 
@@ -367,8 +366,19 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/Python/" itemprop="url" rel="index">
-                    <span itemprop="name">Python</span>
+                  <a href="/categories/编程/" itemprop="url" rel="index">
+                    <span itemprop="name">编程</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/编程/数据库/" itemprop="url" rel="index">
+                    <span itemprop="name">数据库</span>
                   </a>
                 </span>
 
@@ -384,7 +394,7 @@
 
           
           
-             <span id="/2018/12/23/python类的继承/" class="leancloud_visitors" data-flag-title="python类的继承">
+             <span id="/2019/08/25/Redis基础/" class="leancloud_visitors" data-flag-title="Redis基础">
                <span class="post-meta-divider">|</span>
                <span class="post-meta-item-icon">
                  <i class="fa fa-eye"></i>
@@ -414,7 +424,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.6k 字
+                  2.8k 字
                 </span>
               
 
@@ -430,7 +440,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  11 分钟
                 </span>
               
             </div>
@@ -451,48 +461,288 @@
       
 
       
-        <p><img src="/2018/12/23/python类的继承/grass.jpg" alt="图"><br><a id="more"></a></p>
-<h1 id="类的继承"><a href="#类的继承" class="headerlink" title="类的继承"></a>类的继承</h1><blockquote>
-<p>总是从某个类继承，如果没有具体父类的话，那么都是从object继承。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">MyClass</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+        <p><img src="/2019/08/25/Redis基础/Redis.jpg" alt="图"><br><a id="more"></a></p>
+<p>﻿<a href="https://redis.io/" target="_blank" rel="noopener">redis官方网站</a><br><a href="http://redis.cn/" target="_blank" rel="noopener">redis中文官网</a></p>
+<h1 id="nosql介绍"><a href="#nosql介绍" class="headerlink" title="nosql介绍"></a>nosql介绍</h1><p><strong>NoSQL：一类新出现的数据库(not only sql)，它的特点：</strong></p>
+<ul>
+<li>不支持SQL语法</li>
+<li>存储结构跟传统关系型数据库中的那种关系表完全不同，nosql中存储的数据都是K-V形式</li>
+<li>NoSQL的世界中没有一种通用的语言，每种nosql数据库都有自己的api和语法，以及擅长的业务场景</li>
+<li>NoSQL中的产品种类相当多：<ul>
+<li>Mongodb</li>
+<li>Redis</li>
+<li>Hbase hadoop</li>
+<li>Cassandra hadoop</li>
+</ul>
+</li>
+</ul>
+<p><strong>NoSQL和SQL数据库的比较：</strong></p>
+<ul>
+<li><strong>适用场景不同</strong>：sql数据库适合用于关系特别复杂的数据查询场景，nosql反之</li>
+<li><strong>“事务”</strong>特性的支持：sql对事务的支持非常完善，而nosql基本不支持事务</li>
+<li>两者在不断地取长补短，呈现融合趋势</li>
+</ul>
+<hr>
+<h1 id="Redis"><a href="#Redis" class="headerlink" title="Redis"></a>Redis</h1><h2 id="Redis简介"><a href="#Redis简介" class="headerlink" title="Redis简介"></a>Redis简介</h2><ul>
+<li>Redis是一个开源的使用ANSIC语言编写、支持网络、可基于内存亦可持久化的日志型、Key-Value数据库，并提供多种语言的API。从2010年3月15日起，Redis的开发工作由VMware主持。从2013年5月开始，Redis的开发由Pivotal赞助。</li>
+<li>Redis是 NoSQL技术阵营中的一员，它通过多种键值数据类型来适应不同场景下的存储需求，借助一些高层级的接口使用其可以胜任，如缓存、队列系统的不同角色</li>
+</ul>
+<h2 id="Redis特性"><a href="#Redis特性" class="headerlink" title="Redis特性"></a>Redis特性</h2><p>Redis 与其他 key - value 缓存产品有以下<strong>三个特点</strong>：</p>
+<ol>
+<li>Redis支持数据的<strong>持久化</strong>，可以将内存中的数据保存在<strong>磁盘</strong>中，重启的时候可以再次加载进行使用。</li>
+<li>Redis不仅仅支持简单的key-value类型的数据，同时还提供list，set，zset，hash等数据结构的存储。</li>
+<li>Redis支持<strong>数据的备份</strong>，即<strong>master-slave模式</strong>的数据备份。</li>
+</ol>
+<h2 id="Redis-优势"><a href="#Redis-优势" class="headerlink" title="Redis 优势"></a>Redis 优势</h2><ul>
+<li>性能极高 – Redis能读的速度是110000次/s,写的速度是81000次/s 。</li>
+<li>丰富的数据类型 – Redis支持二进制案例的 Strings, Lists, Hashes, Sets 及 Ordered Sets<br>数据类型操作。</li>
+<li>原子 – Redis的所有操作都是原子性的，同时Redis还支持对几个操作全并后的原子性执行。</li>
+<li>丰富的特性 – Redis还支持 publish/subscribe, 通知, key 过期等等特性。</li>
+</ul>
+<h2 id="Redis应用场景"><a href="#Redis应用场景" class="headerlink" title="Redis应用场景"></a>Redis应用场景</h2><ul>
+<li>用来做<strong>缓存(ehcache/memcached)</strong>——redis的所有数据是放在<strong>内存</strong>中的（内存数据库）</li>
+<li>可以在某些特定应用场景下替代传统数据库——比如社交类的应用</li>
+<li>在一些大型系统中，巧妙地实现一些特定的功能：session共享、购物车</li>
+</ul>
+<p>只要你有丰富的想象力，redis可以用在可以给你无限的惊喜…….</p>
+<hr>
+<h1 id="服务端和客户端命令"><a href="#服务端和客户端命令" class="headerlink" title="服务端和客户端命令"></a>服务端和客户端命令</h1><h2 id="服务器端"><a href="#服务器端" class="headerlink" title="服务器端"></a>服务器端</h2><p>服务器端的命令为<code>redis-server</code></p>
+<p>可以使⽤help查看帮助⽂档 <code>redis-server --help</code></p>
+<p>推荐使⽤服务的⽅式管理redis服务启动 <code>sudo service redis start</code></p>
+<p>停⽌ <code>sudo service redis stop</code></p>
+<p>重启 <code>sudo service redis restart</code></p>
+<p>个人习惯<br><code>ps -ef|grep redis</code> 查看redis服务器进程<br><code>sudo kill -9 pid</code> 杀死redis服务器<br><code>sudo redis-server /etc/redis/redis.conf</code> 指定加载的配置文件</p>
+<h2 id="客户端"><a href="#客户端" class="headerlink" title="客户端"></a>客户端</h2><p>客户端的命令为<code>redis-cli</code></p>
+<p>可以使⽤help查看帮助⽂档 <code>redis-cli --help</code></p>
+<p>连接redis <code>redis-cli</code></p>
+<p>运⾏测试命令 <code>ping</code></p>
+<p>切换数据库 <code>select n</code><br>数据库没有名称，<strong>默认有16个</strong>，通过0-15来标识，连接redis默认选择第一个数据库</p>
+<hr>
+<h1 id="数据操作"><a href="#数据操作" class="headerlink" title="数据操作"></a>数据操作</h1><blockquote>
+<p>值的类型分为五种：</p>
+<ul>
+<li>字符串string</li>
+<li>哈希hash</li>
+<li>列表list</li>
+<li>集合set</li>
+<li>有序集合zset</li>
+</ul>
 </blockquote>
+<h2 id="string类型"><a href="#string类型" class="headerlink" title="string类型"></a>string类型</h2><blockquote>
+<p>字符串类型是Redis中最为基础的数据存储类型，它在Redis中是二进制安全的，这便意味着该类型可以接受任何格式的数据，如JPEG图像数据或Json对象描述信息等。<br>在Redis中字符串类型的<strong>Value最多可以容纳的数据长度是512M</strong>。</p>
+</blockquote>
+<p><strong>保存</strong><br>如果设置的键不存在则为添加，如果设置的键已经存在则修改</p>
+<ul>
+<li><p>设置键值 <code>set key value</code><br>例1：设置键为name值为itcast的数据</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&gt; set name itcast</span><br><span class="line">OK</span><br><span class="line">&gt; get name</span><br><span class="line">&quot;itcast&quot;</span><br><span class="line">&gt; set name itheima</span><br><span class="line">OK</span><br><span class="line">&gt; get name</span><br><span class="line">&quot;ithema&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置键值及过期时间，以秒为单位 <code>setex key seconds value</code><br>例2：设置键为aa值为aa过期时间为3秒的数据</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; setex aa 3 aa</span><br><span class="line">OK</span><br><span class="line">&gt; get aa</span><br><span class="line">&quot;aa&quot;</span><br><span class="line">&gt; get aa</span><br><span class="line">(nil)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li><p>设置多个键值 <code>mset key1 value1 key2 value2 ...</code><br>例3：设置键为’a1’值为’python’、键为’a2’值为’java’、键为’a3’值为’c’</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mset a1 python a2 java a3 c</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>追加值 <code>append key value</code></p>
+</li>
+</ul>
+<p><strong>获取</strong></p>
+<ul>
+<li>获取：根据键获取值，如果不存在此键则返回nil <code>get key</code></li>
+<li>根据多个键获取多个值 <code>mget key1 key2 ...</code></li>
+</ul>
+<hr>
+<h2 id="键命令"><a href="#键命令" class="headerlink" title="键命令"></a>键命令</h2><ul>
+<li><p>查找键，参数⽀持正则表达 <code>keys pattern</code></p>
+<p> 例1：查看所有键 <code>keys *</code><br> 例2：查看名称中包含a的键 <code>keys &#39;a*&#39;</code></p>
+</li>
+<li><p>判断键是否存在，如果存在返回1，不存在返回0 <code>exists key1</code></p>
+<p> 例3：判断键a1是否存在 <code>exists a1</code></p>
+</li>
+<li><p>查看键对应的value的类型 <code>type key</code></p>
+<p>  例4：查看键a1的值类型 <code>type a1</code></p>
+</li>
+<li><p>删除键及对应的值 <code>del key1 key2 ...</code></p>
+</li>
+<li><p>设置过期时间，以秒为单位<br>如果没有指定过期时间则⼀直存在，直到使⽤DEL移除 <code>expire key seconds</code></p>
+<p> 例6：设置键’a1’的过期时间为3秒 <code>expire &#39;a1&#39; 3</code></p>
+</li>
+<li><p>查看有效时间，以秒为单位 <code>ttl key</code></p>
+</li>
+</ul>
+<hr>
+<h2 id="hash"><a href="#hash" class="headerlink" title="hash"></a>hash</h2><blockquote>
+<ul>
+<li>hash⽤于存储对象，对象的结构为<strong>属性</strong>、<strong>值</strong></li>
+<li>值的类型为string</li>
+</ul>
+</blockquote>
+<p><strong>增加、修改</strong></p>
+<ul>
+<li><p>设置单个属性 <code>hset key field value</code></p>
+<p> 例1：设置键 user的属性name为itheima</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; hset user name itheima</span><br><span class="line">MISCONF Redis is configured to save RDB snapshots, but is currently not able to persist on disk. Commands that may modify the data set are disabled. Please check Redis logs for details about the error.</span><br><span class="line">(Redis被配置为**保存数据库快照**，但它目前不能持久化到硬盘。用来修改集合数据的命令不能用)</span><br><span class="line">&gt; config set stop-writes-on-bgsave-error no</span><br><span class="line">OK</span><br><span class="line">&gt; hset user name itheima</span><br><span class="line">(integer) 1</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
 <blockquote>
-<p>不要忘记调用super().<strong> init </strong><br>用来初始化父类的，如果忘记调用，那么父类的属性就可能没有被初始化。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, args)</span>:</span></span><br><span class="line">    super(SubClass, self).__init__(args)</span><br><span class="line">    <span class="keyword">pass</span></span><br></pre></td></tr></table></figure></p>
+<p>原因：<br>强制关闭Redis快照导致不能持久化。 解决方案：<br>运行config set stop-writes-on-bgsave-error no　命令后，关闭配置项stop-writes-on-bgsave-error解决该问题。</p>
 </blockquote>
-<h2 id="python中继承一个类"><a href="#python中继承一个类" class="headerlink" title="python中继承一个类"></a>python中继承一个类</h2><p>如果已经定义了<strong>Person</strong>类，需要定义新的<strong>Student</strong>和<strong>Teacher</strong>类时，可以直接从Person类继承：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br></pre></td></tr></table></figure>
-<p>定义<strong>Student</strong>类时，只需要把额外的属性加上，例如score：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, score)</span>:</span></span><br><span class="line">        super(Student, self).__init__(name, gender)</span><br><span class="line">        self.score = score</span><br></pre></td></tr></table></figure></p>
-<p>一定要用 <strong>super(Student, self).<strong>init</strong>(name, gender)</strong> 去初始化父类，否则，继承自 <strong>Person</strong> 的 <strong>Student</strong> 将没有 <strong>name</strong> 和 <strong>gender</strong>。</p>
-<p>函数<strong>super(Student, self)</strong> 将返回当前类继承的父类，即 <strong>Person</strong> ，然后调用<strong>init</strong>()方法，<strong>注意self参数已在super()中传入，在<strong>init</strong>()中将隐式传递，不需要写出（也不能写）</strong>。</p>
-<h2 id="4-2-python中判断类型"><a href="#4-2-python中判断类型" class="headerlink" title="4.2 python中判断类型"></a>4.2 python中判断类型</h2><p>函数<strong>isinstance()</strong>可以判断一个变量的类型，既可以用在Python内置的数据类型如<strong>str</strong>、<strong>list</strong>、<strong>dict</strong>，也可以用在我们自定义的类，它们本质上都是数据类型。<br>假设有如下的 Person、Student 和 Teacher 的定义及继承关系如下：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">p = Person(<span class="string">'Tim'</span>, <span class="string">'Male'</span>)</span><br><span class="line">s = Student(<span class="string">'Bob'</span>, <span class="string">'Male'</span>, <span class="number">88</span>)</span><br><span class="line">t = Teacher(<span class="string">'Alice'</span>, <span class="string">'Female'</span>, <span class="string">'English'</span>)</span><br></pre></td></tr></table></figure></p>
-<p>当我们拿到变量 p、s、t 时，可以使用 isinstance 判断类型：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>isinstance(p, Person)</span><br><span class="line"><span class="keyword">True</span>    <span class="comment"># p是Person类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>isinstance(p, Student)</span><br><span class="line"><span class="keyword">False</span>   <span class="comment"># p不是Student类型</span></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>isinstance(p, Teacher)</span><br><span class="line"><span class="keyword">False</span>   <span class="comment"># p不是Teacher类型</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="4-3-python中多态"><a href="#4-3-python中多态" class="headerlink" title="4.3 python中多态"></a>4.3 python中多态</h2><p>类具有继承关系，并且子类类型可以向上转型看做父类类型，如果我们从 <strong>Person</strong> 派生出 <strong>Student</strong>和<strong>Teacher</strong> ，并都写了一个 <strong>whoAmI()</strong> 方法：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender)</span>:</span></span><br><span class="line">        self.name = name</span><br><span class="line">        self.gender = gender</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">whoAmI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'I am a Person, my name is %s'</span> % self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Student</span><span class="params">(Person)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, score)</span>:</span></span><br><span class="line">        super(Student, self).__init__(name, gender)</span><br><span class="line">        self.score = score</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">whoAmI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'I am a Student, my name is %s'</span> % self.name</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Teacher</span><span class="params">(Person)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, course)</span>:</span></span><br><span class="line">        super(Teacher, self).__init__(name, gender)</span><br><span class="line">        self.course = course</span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">whoAmI</span><span class="params">(self)</span>:</span></span><br><span class="line">        <span class="keyword">return</span> <span class="string">'I am a Teacher, my name is %s'</span> % self.name</span><br></pre></td></tr></table></figure></p>
-<p>在一个函数中，如果我们接收一个变量 <strong>x</strong>，则无论该 <strong>x</strong> 是 <strong>Person</strong>、<strong>Student</strong>还是 <strong>Teacher</strong>，都可以正确打印出结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">who_am_i</span><span class="params">(x)</span>:</span></span><br><span class="line">    <span class="keyword">print</span> x.whoAmI()</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">'Tim'</span>, <span class="string">'Male'</span>)</span><br><span class="line">s = Student(<span class="string">'Bob'</span>, <span class="string">'Male'</span>, <span class="number">88</span>)</span><br><span class="line">t = Teacher(<span class="string">'Alice'</span>, <span class="string">'Female'</span>, <span class="string">'English'</span>)</span><br><span class="line"></span><br><span class="line">who_am_i(p)</span><br><span class="line">who_am_i(s)</span><br><span class="line">who_am_i(t)</span><br></pre></td></tr></table></figure></p>
-<p>运行结果：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">I am a Person, my name <span class="keyword">is</span> Tim</span><br><span class="line">I am a Student, my name <span class="keyword">is</span> Bob</span><br><span class="line">I am a Teacher, my name <span class="keyword">is</span> Alice</span><br></pre></td></tr></table></figure></p>
-<p>这种行为称为多态。也就是说，方法调用将作用在 <strong>x</strong> 的实际类型上。<strong>s</strong> 是<strong>Student</strong>类型，它实际上拥有自己的 <strong>whoAmI()</strong> 方法以及从 <strong>Person</strong>继承的 whoAmI方法，但调用 <strong>s.whoAmI()</strong> 总是先查找它自身的定义，如果没有定义，则顺着继承链向上查找，直到在某个父类中找到为止。</p>
-<p>由于Python是动态语言，所以，传递给函数 <strong>who_am_i(x)</strong> 的参数 <strong>x</strong> 不一定是 Person 或 Person 的子类型。任何数据类型的实例都可以，只要它 <strong>有一个whoAmI()</strong> 的方法即可：</p>
-<p>这是动态语言和静态语言（例如Java）最大的差别之一。动态语言调用实例方法，不检查类型，只要方法存在，参数正确，就可以调用。</p>
-<h2 id="python中多重继承"><a href="#python中多重继承" class="headerlink" title="python中多重继承"></a>python中多重继承</h2><p>除了从一个父类继承外，Python允许从多个父类继承，称为<strong>多重继承</strong>。</p>
-<p>多重继承的继承链就不是一棵树了，它像这样：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span><span class="params">(object)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        <span class="keyword">print</span> <span class="string">'init A...'</span></span><br><span class="line">        self.a = a</span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">B</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        super(B, self).__init__(a)</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'init B...'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">C</span><span class="params">(A)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        super(C, self).__init__(a)</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'init C...'</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">D</span><span class="params">(B, C)</span>:</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, a)</span>:</span></span><br><span class="line">        super(D, self).__init__(a)</span><br><span class="line">        <span class="keyword">print</span> <span class="string">'init D...'</span></span><br></pre></td></tr></table></figure></p>
-<p>如图所示：<br><img src="http://img.mukewang.com/54daf037000142d207580552.jpg" alt="在这里插入图片描述"></p>
-<p>像这样，D 同时继承自 B 和 C，也就是 D 拥有了 A、B、C 的全部功能。多重继承通过 <strong>super()</strong> 调用<strong>init</strong>()方法时，A 虽然被继承了两次，但<strong>init</strong>()只调用一次：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>d = D(<span class="string">'d'</span>)</span><br><span class="line">init A...</span><br><span class="line">init C...</span><br><span class="line">init B...</span><br><span class="line">init D...</span><br></pre></td></tr></table></figure></p>
-<p><strong>多重继承的目的</strong>是从两种继承树中分别选择并继承出子类，以便组合功能使用。</p>
-<h2 id="python中获取对象信息"><a href="#python中获取对象信息" class="headerlink" title="python中获取对象信息"></a>python中获取对象信息</h2><p>拿到一个变量，除了用 <strong>isinstance()</strong> 判断它是否是某种类型的实例外，还有没有别的方法获取到更多的信息呢？</p>
-<p>首先可以用 <strong>type()</strong> 函数获取变量的类型，它返回一个 Type 对象：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(<span class="number">123</span>)</span><br><span class="line">&lt;type <span class="string">'int'</span>&gt;</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s = Student(<span class="string">'Bob'</span>, <span class="string">'Male'</span>, <span class="number">88</span>)</span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>type(s)</span><br><span class="line">&lt;<span class="class"><span class="keyword">class</span> '<span class="title">__main__</span>.<span class="title">Student</span>'&gt;</span></span><br></pre></td></tr></table></figure></p>
-<p>其次，可以用 <strong>dir()</strong> 函数获取变量的所有属性：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>dir(<span class="number">123</span>)   <span class="comment"># 整数也有很多属性...</span></span><br><span class="line">[<span class="string">'__abs__'</span>, <span class="string">'__add__'</span>, <span class="string">'__and__'</span>, <span class="string">'__class__'</span>, <span class="string">'__cmp__'</span>, ...]</span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>dir(s)</span><br><span class="line">[<span class="string">'__class__'</span>, <span class="string">'__delattr__'</span>, <span class="string">'__dict__'</span>, <span class="string">'__doc__'</span>, <span class="string">'__format__'</span>, <span class="string">'__getattribute__'</span>, <span class="string">'__hash__'</span>, <span class="string">'__init__'</span>, <span class="string">'__module__'</span>, <span class="string">'__new__'</span>, <span class="string">'__reduce__'</span>, <span class="string">'__reduce_ex__'</span>, <span class="string">'__repr__'</span>, <span class="string">'__setattr__'</span>, <span class="string">'__sizeof__'</span>, <span class="string">'__str__'</span>, <span class="string">'__subclasshook__'</span>, <span class="string">'__weakref__'</span>, <span class="string">'gender'</span>, <span class="string">'name'</span>, <span class="string">'score'</span>, <span class="string">'whoAmI'</span>]</span><br></pre></td></tr></table></figure></p>
-<p>对于实例变量，<strong>dir()</strong> 返回所有实例属性，包括<code>__class__</code>这类有特殊意义的属性。注意到方法<code>whoAmI</code>也是 s 的一个属性。</p>
-<p>如何去掉<code>__xxx__</code>这类的特殊属性，只保留我们自己定义的属性？回顾一下<strong>filter()</strong> 函数的用法。</p>
-<p><strong>dir()</strong> 返回的属性是字符串列表，如果已知一个属性名称，要获取或者设置对象的属性，就需要用 <strong>getattr()</strong> 和 <strong>setattr( )</strong> 函数了：<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;&gt;&gt; </span>getattr(s, <span class="string">'name'</span>)  <span class="comment"># 获取name属性</span></span><br><span class="line"><span class="string">'Bob'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>setattr(s, <span class="string">'name'</span>, <span class="string">'Adam'</span>)  <span class="comment"># 设置新的name属性</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>s.name</span><br><span class="line"><span class="string">'Adam'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>getattr(s, <span class="string">'age'</span>)  <span class="comment"># 获取age属性，但是属性不存在，报错：</span></span><br><span class="line">Traceback (most recent call last):</span><br><span class="line">  File <span class="string">"&lt;stdin&gt;"</span>, line <span class="number">1</span>, <span class="keyword">in</span> &lt;module&gt;</span><br><span class="line">AttributeError: <span class="string">'Student'</span> object has no attribute <span class="string">'age'</span></span><br><span class="line"></span><br><span class="line"><span class="meta">&gt;&gt;&gt; </span>getattr(s, <span class="string">'age'</span>, <span class="number">20</span>)  <span class="comment"># 获取age属性，如果属性不存在，就返回默认值20：</span></span><br><span class="line"><span class="number">20</span></span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>设置多个属性 <code>hmset key field1 value1 field2 value2 ...</code><br> 例2：设置键u2的属性name为itcast、属性age为11 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; hmset u2 name itcast age 11</span><br><span class="line">OK</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>获取</strong></p>
+<ul>
+<li>获取指定键<strong>所有的属性</strong> <code>hkeys key</code><br>  例3：获取键u2的所有属性  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; hkeys u2</span><br><span class="line">1) &quot;name&quot;</span><br><span class="line">2) &quot;age&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>获取<strong>⼀个属性的值</strong> <code>hget key field</code><br>  例4：获取键u2属性’name’的值  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">	&gt; hget u2 &apos;name&apos;</span><br><span class="line">&quot;itcast&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>获取<strong>多个属性的值</strong> <code>hmget key field1 field2 ...</code><br>  例5：获取键u2属性’name’、’age’的值  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; hmget u2 name age</span><br><span class="line">1) &quot;itcast&quot;</span><br><span class="line">2) &quot;11&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>获取<strong>所有属性的值</strong><code>hvals key</code><br>  例6：获取键’u2’所有属性的值 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; hvals u2</span><br><span class="line">1) &quot;itcast&quot;</span><br><span class="line">2) &quot;11&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>删除</strong></p>
+<ul>
+<li>删除整个hash键及值，使⽤del命令</li>
+<li><p>删除属性，属性对应的值会被⼀起删除 <code>hdel key field1 field2 ...</code></p>
+<p>  例7：删除键’u2’的属性’age’</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; hdel u2 age</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; hkeys u2</span><br><span class="line">1) &quot;name&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="list"><a href="#list" class="headerlink" title="list"></a>list</h2><blockquote>
+<ul>
+<li>列表的元素类型为string</li>
+<li>按照插⼊顺序排序</li>
+</ul>
+</blockquote>
+<p><strong>增加</strong></p>
+<ul>
+<li><p>在左侧插⼊数据 <code>lpush key value1 value2 ...</code><br>  例1：从键为’a1’的<strong>列表左侧加⼊</strong>数据a 、 b 、c</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; lpush a1 a b c        // a1: c b a (类似堆栈）</span><br><span class="line">(integer) 3</span><br><span class="line">&gt; lrange a1 0 3</span><br><span class="line">&quot;c&quot;</span><br><span class="line">&quot;b&quot;</span><br><span class="line">&quot;a&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>在<strong>右侧插⼊</strong>数据 <code>rpush key value1 value2 ...</code><br>  例2：从键为’a1’的列表右侧加⼊数据0 1 </p>
+  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">	&gt; rpush a1 0 1</span><br><span class="line">(integer) 5</span><br><span class="line">&gt; lrange a1 0 5</span><br><span class="line">&quot;c&quot;</span><br><span class="line">&quot;b&quot;</span><br><span class="line">&quot;a&quot;</span><br><span class="line">&quot;0&quot;</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>在<strong>指定元素的前或后</strong>插⼊新元素 <code>linsert key before或after 现有元素 新元素</code><br>  例3：在键为’a1’的列表中元素’b’前加⼊’3’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; linsert a1 before b 3</span><br><span class="line">(integer) 6</span><br><span class="line">&gt; lrange a1 0 6</span><br><span class="line">&quot;c&quot;</span><br><span class="line">&quot;3&quot;</span><br><span class="line">&quot;b&quot;</span><br><span class="line">&quot;a&quot;</span><br><span class="line">&quot;0&quot;</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>获取</strong></p>
+<ul>
+<li><p>返回列表⾥指定范围内的元素</p>
+<ul>
+<li>start、stop为元素的下标索引</li>
+<li>索引从左侧开始，第⼀个元素为0</li>
+<li><p>索引可以是负数，表示从尾部开始计数，如-1表示最后⼀个元素 <code>lrange key start stop</code></p>
+<p>例4：获取键为’a1’的列表所有元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&gt; lrange a1 0 -1</span><br><span class="line">&quot;c&quot;</span><br><span class="line">&quot;3&quot;</span><br><span class="line">&quot;b&quot;</span><br><span class="line">&quot;a&quot;</span><br><span class="line">&quot;0&quot;</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>设置指定索引位置的元素值</strong></p>
+<ul>
+<li>索引从左侧开始，第⼀个元素为0</li>
+<li><p>索引可以是负数，表示尾部开始计数，如-1表示最后⼀个元素 <code>lset key index value</code></p>
+<p>  例5：修改键为’a1’的列表中下标为1的元素值为’z’</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; lset a1 1 z</span><br><span class="line">OK</span><br><span class="line">&gt; lrange a1 0 -1</span><br><span class="line">&quot;c&quot;</span><br><span class="line">&quot;z&quot;</span><br><span class="line">&quot;b&quot;</span><br><span class="line">&quot;a&quot;</span><br><span class="line">&quot;0&quot;</span><br><span class="line">&quot;1&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>删除</strong></p>
+<ul>
+<li><p>删除指定元素</p>
+<ul>
+<li>将列表中<strong>前count次</strong>出现的<strong>值为value的元素</strong>移除</li>
+<li>count &gt; 0: 从头往尾移除</li>
+<li>count &lt; 0: 从尾往头移除</li>
+<li><p>count = 0: 移除所有 <code>lrem key count value</code></p>
+<p>例6.1：从’a2’列表<strong>右侧开始</strong>删除2个’b’</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&gt; lpush a2 a b a b a b    //lpush是从左侧插入，所以结果为： a2 : b a b a b a</span><br><span class="line">(integer) 6</span><br><span class="line">&gt; lrem a2 -2 b</span><br><span class="line">(integer) 2</span><br><span class="line">&gt; lrange a2 0 -1</span><br><span class="line">1) &quot;b&quot;</span><br><span class="line">2) &quot;a&quot;</span><br><span class="line">3) &quot;a&quot;</span><br><span class="line">4) &quot;a&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+</ul>
+<hr>
+<h2 id="set"><a href="#set" class="headerlink" title="set"></a>set</h2><blockquote>
+<ul>
+<li>⽆序集合</li>
+<li>元素为string类型</li>
+<li>元素具有唯⼀性，不重复</li>
+<li>说明：对于集合没有修改操作</li>
+</ul>
+</blockquote>
+<p><strong>增加</strong></p>
+<ul>
+<li>添加元素 <code>sadd key member1 member2 ...</code><br> 例1：向键’a3’的集合中添加元素’zhangsan’、’lisi’、’wangwu’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; sadd a3 zhangsan sili wangwu</span><br><span class="line">(integer) 3</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>获取</strong></p>
+<ul>
+<li><p>返回所有的元素 <code>smembers key</code></p>
+<p> 例2：获取键’a3’的集合中所有元素 </p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&gt; smembers a3</span><br><span class="line">1) &quot;wangwu&quot;</span><br><span class="line">2) &quot;sili&quot;</span><br><span class="line">3) &quot;zhangsan&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>删除</strong></p>
+<ul>
+<li>删除指定元素 <code>srem key</code><br> 例3：删除键’a3’的集合中元素’wangwu’ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; srem a3 wangwu</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; smember a3</span><br><span class="line">1) &quot;sili&quot;</span><br><span class="line">2) &quot;zhangsan&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<hr>
+<h2 id="zset"><a href="#zset" class="headerlink" title="zset"></a>zset</h2><blockquote>
+<ul>
+<li>sorted set，有序集合</li>
+<li>元素为string类型</li>
+<li>元素具有唯⼀性，不重复</li>
+<li>每个元素都会关联⼀个double类型的score，表示权重，通过权重将元素从⼩到⼤排序</li>
+<li>说明：没有修改操作</li>
+</ul>
+</blockquote>
+<p><strong>增加</strong></p>
+<ul>
+<li>添加 <code>zadd key score1 member1 score2 member2 ...</code><br> 例1：向键’a4’的集合中添加元素’lisi’、’wangwu’、’zhaoliu’、’zhangsan’，权重分别为4、5、6、3 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zadd a4 4 lisi 5 wangwu 6 zhaoliu 3 zhangsan</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>获取</strong></p>
+<ul>
+<li><p>返回指定范围内的元素</p>
+<ul>
+<li>start、stop为元素的下标索引</li>
+<li>索引从左侧开始，第⼀个元素为0</li>
+<li><p>索引可以是负数，表示从尾部开始计数，如-1表示最后⼀个元素  <code>zrange key start stop</code></p>
+<p>例2：获取键’a4’的集合中所有元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&gt; zrange a4 0 -1</span><br><span class="line">1) &quot;zhangsan&quot;</span><br><span class="line">2) &quot;lisi&quot;</span><br><span class="line">3) &quot;wangwu&quot;</span><br><span class="line">4) &quot;zhaoliu</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>返回<strong>score值</strong>在min和max之间的成员 <code>zrangebyscore key min max</code><br> 例3：获取键’a4’的集合中<strong>权限值</strong>在5和6之间的成员</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt; zrangebyscore a4 5 6</span><br><span class="line">&quot;wangwu&quot;</span><br><span class="line">&quot;zhaoliu&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>返回成员member的score值 <code>zscore key member</code><br> 例4：获取键’a4’的集合中元素’zhangsan’的<strong>权重</strong></p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&gt; zscore a4 zhangsan</span><br><span class="line">&quot;3&quot;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<p><strong>删除</strong></p>
+<ul>
+<li><p>删除指定元素 <code>zrem key member1 member2 ...</code><br> 例5：删除集合’a4’中元素’zhangsan’</p>
+ <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&gt; zrem a4 zhangsan</span><br><span class="line">(integer) 1</span><br><span class="line">&gt; zrange a4 0 -1</span><br><span class="line">1) &quot;lisi&quot;</span><br><span class="line">2) &quot;wangwu&quot;</span><br><span class="line">3) zhaoliu&quot;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>删除权重在指定范围的元素 <code>zremrangebyscore key min max</code><br>  例6：删除集合’a4’中权限在5、6之间的元素<br> <code>`</code></p>
 <blockquote>
-<p>任务：<br>对于Person类的定义：</p>
+<p>zremrangebyscore a4 5 6<br> (integer) 2<br>zrange a4 0 -1<br> “lisi”</p>
 </blockquote>
-<pre><code>class Person(object):
-    def __init__(self, name, gender):
-        self.name = name
-        self.gender = gender
-</code></pre><blockquote>
-<p>希望除了 name和gender 外，可以提供任意额外的关键字参数，并绑定到实例，请修改 Person 的 <strong>init</strong>()定 义，完成该功能。</p>
-</blockquote>
-<p>传入**kw 即可传入任意数量的参数，并通过 setattr() 绑定属性。<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Person</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, name, gender, **kw)</span>:</span></span><br><span class="line">        <span class="keyword">for</span> k, v <span class="keyword">in</span> kw.iteritems():</span><br><span class="line">            setattr(self, k, v)</span><br><span class="line"></span><br><span class="line">p = Person(<span class="string">'Bob'</span>, <span class="string">'Male'</span>, age=<span class="number">18</span>, course=<span class="string">'Python'</span>)</span><br><span class="line"><span class="keyword">print</span> p.age</span><br><span class="line"><span class="keyword">print</span> p.course</span><br></pre></td></tr></table></figure></p>
+</li>
+</ul>
 
       
     </div>
@@ -542,7 +792,7 @@
   </li>
   <li class="post-copyright-link">
     <strong>本文链接：</strong>
-    <a href="http://yoursite.com/2018/12/23/python类的继承/" title="python类的继承">http://yoursite.com/2018/12/23/python类的继承/</a>
+    <a href="http://yoursite.com/2019/08/25/Redis基础/" title="Redis基础">http://yoursite.com/2019/08/25/Redis基础/</a>
   </li>
   <li class="post-copyright-license">
     <strong>版权声明： </strong>
@@ -557,9 +807,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Python/" rel="tag"># Python</a>
-          
-            <a href="/tags/编程/" rel="tag"># 编程</a>
+            <a href="/tags/Redis/" rel="tag"># Redis</a>
           
         </div>
       
@@ -572,8 +820,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/22/python面向对象编程/" rel="next" title="python面向对象编程">
-                <i class="fa fa-chevron-left"></i> python面向对象编程
+              <a href="/2019/08/17/Python输入读取stdin与input/" rel="next" title="Python输入读取stdin与input">
+                <i class="fa fa-chevron-left"></i> Python输入读取stdin与input
               </a>
             
           </div>
@@ -581,10 +829,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/01/09/HTTP状态码302解决方法/" rel="prev" title="HTTP状态码302解决方法">
-                HTTP状态码302解决方法 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -813,7 +1057,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#类的继承"><span class="nav-number">1.</span> <span class="nav-text">类的继承</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#python中继承一个类"><span class="nav-number">1.1.</span> <span class="nav-text">python中继承一个类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-python中判断类型"><span class="nav-number">1.2.</span> <span class="nav-text">4.2 python中判断类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-python中多态"><span class="nav-number">1.3.</span> <span class="nav-text">4.3 python中多态</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中多重继承"><span class="nav-number">1.4.</span> <span class="nav-text">python中多重继承</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#python中获取对象信息"><span class="nav-number">1.5.</span> <span class="nav-text">python中获取对象信息</span></a></li></ol></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#nosql介绍"><span class="nav-number">1.</span> <span class="nav-text">nosql介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Redis"><span class="nav-number">2.</span> <span class="nav-text">Redis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis简介"><span class="nav-number">2.1.</span> <span class="nav-text">Redis简介</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis特性"><span class="nav-number">2.2.</span> <span class="nav-text">Redis特性</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis-优势"><span class="nav-number">2.3.</span> <span class="nav-text">Redis 优势</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Redis应用场景"><span class="nav-number">2.4.</span> <span class="nav-text">Redis应用场景</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#服务端和客户端命令"><span class="nav-number">3.</span> <span class="nav-text">服务端和客户端命令</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#服务器端"><span class="nav-number">3.1.</span> <span class="nav-text">服务器端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#客户端"><span class="nav-number">3.2.</span> <span class="nav-text">客户端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#数据操作"><span class="nav-number">4.</span> <span class="nav-text">数据操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#string类型"><span class="nav-number">4.1.</span> <span class="nav-text">string类型</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#键命令"><span class="nav-number">4.2.</span> <span class="nav-text">键命令</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hash"><span class="nav-number">4.3.</span> <span class="nav-text">hash</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#list"><span class="nav-number">4.4.</span> <span class="nav-text">list</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#set"><span class="nav-number">4.5.</span> <span class="nav-text">set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#zset"><span class="nav-number">4.6.</span> <span class="nav-text">zset</span></a></li></ol></li></ol></div>
             
 
           </div>
